@@ -279,23 +279,33 @@ export default function Home() {
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto"
             initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={staggerContainer}
           >
-            {diseases.slice(0, 9).map((disease) => (
+            {diseases.slice(0, 5).map((disease) => (
               <motion.div key={disease.id} variants={fadeUp} className="h-full">
-                <Link href={`/enfermedades/${disease.slug}`} className="bg-slate-50/50 border border-slate-200 hover:border-accent/40 p-8 flex flex-col justify-between h-full group hover:shadow-md hover:bg-white transition-all duration-300 rounded-2xl">
-                  <div>
-                    <div className="flex justify-between items-start mb-6">
-                      <span className="text-[9px] font-bold text-accent uppercase tracking-widest">Patología Especializada</span>
-                      <span className="text-stone-300 group-hover:text-accent transition-colors">&rarr;</span>
-                    </div>
-                    <h3 className="text-xl font-serif text-primary mb-3 font-bold group-hover:text-accent transition-colors">{disease.name}</h3>
-                    <p className="text-stone-600 text-xs font-light leading-relaxed mb-6">{disease.description.substring(0, 140)}...</p>
-                  </div>
-                  <div className="border-t border-slate-100 pt-4 flex flex-wrap gap-2">
-                    {disease.treatments.slice(0, 2).map((t, idx) => (
-                      <span key={idx} className="bg-white text-stone-500 text-[9px] uppercase font-bold tracking-wider px-2.5 py-1 border border-slate-200">
-                        {t}
+                <Link href={`/enfermedades/${disease.slug}`} className="bg-slate-50/50 border border-slate-200 hover:border-accent/40 overflow-hidden flex flex-col justify-between h-full group hover:shadow-md hover:bg-white transition-all duration-300 rounded-3xl">
+                  <div className="aspect-[16/10] relative overflow-hidden bg-slate-100">
+                    <img 
+                      src={disease.image} 
+                      alt={disease.name} 
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute top-4 left-4">
+                      <span className="inline-block px-3 py-1 bg-white/90 backdrop-blur-sm text-accent font-bold text-[9px] uppercase tracking-wider shadow-sm rounded-full">
+                        Patología
                       </span>
-                    ))}
+                    </div>
+                  </div>
+                  <div className="p-8 flex-grow flex flex-col justify-between">
+                    <div>
+                      <h3 className="text-xl font-serif text-primary mb-3 font-bold group-hover:text-accent transition-colors">{disease.name}</h3>
+                      <p className="text-stone-600 text-xs font-light leading-relaxed mb-6">{disease.description.substring(0, 140)}...</p>
+                    </div>
+                    <div className="border-t border-slate-100 pt-4 flex flex-wrap gap-2">
+                      {disease.treatments.slice(0, 2).map((t, idx) => (
+                        <span key={idx} className="bg-white text-stone-500 text-[9px] uppercase font-bold tracking-wider px-2.5 py-1 border border-slate-200">
+                          {t}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </Link>
               </motion.div>
@@ -325,22 +335,36 @@ export default function Home() {
             className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto"
             initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={staggerContainer}
           >
-            {services.slice(0, 8).map((service) => (
+            {services.slice(0, 5).map((service) => (
               <motion.div key={service.id} variants={fadeUp} className="h-full">
-                <Link href={`/servicios/${service.slug}`} className="bg-white border border-slate-200 hover:border-accent/30 p-8 flex flex-col justify-between h-full group hover:shadow-lg transition-all duration-300 rounded-2xl">
-                  <div>
-                    <div className="flex justify-between items-center mb-4">
-                      <span className="text-[9px] font-bold text-stone-400 uppercase tracking-widest">Procedimiento Quirúrgico</span>
-                      {service.priceRange && (
-                        <span className="text-[10px] font-bold bg-primary/5 text-primary px-3 py-1 rounded-full">{service.priceRange}</span>
-                      )}
+                <Link href={`/servicios/${service.slug}`} className="bg-white border border-slate-200 hover:border-accent/30 flex flex-col sm:flex-row h-full group hover:shadow-lg transition-all duration-300 rounded-3xl overflow-hidden">
+                  <div className="sm:w-5/12 aspect-[16/10] sm:aspect-auto relative overflow-hidden bg-slate-100 min-h-[200px]">
+                    <img 
+                      src={service.image} 
+                      alt={service.name} 
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute top-4 left-4">
+                      <span className="inline-block px-3 py-1 bg-white/90 backdrop-blur-sm text-primary font-bold text-[9px] uppercase tracking-wider shadow-sm rounded-full">
+                        Servicio
+                      </span>
                     </div>
-                    <h3 className="text-xl font-serif text-primary mb-3 font-bold group-hover:text-accent transition-colors">{service.name}</h3>
-                    <p className="text-stone-600 text-xs font-light leading-relaxed mb-6">{service.description}</p>
                   </div>
-                  <span className="text-accent font-bold text-[10px] uppercase tracking-widest group-hover:underline">
-                    Ver Detalles &rarr;
-                  </span>
+                  <div className="sm:w-7/12 p-8 flex flex-col justify-between flex-grow">
+                    <div>
+                      <div className="flex justify-between items-center mb-4">
+                        <span className="text-[9px] font-bold text-stone-400 uppercase tracking-widest">Procedimiento Quirúrgico</span>
+                        {service.priceRange && (
+                          <span className="text-[10px] font-bold bg-primary/5 text-primary px-3 py-1 rounded-full">{service.priceRange}</span>
+                        )}
+                      </div>
+                      <h3 className="text-xl font-serif text-primary mb-3 font-bold group-hover:text-accent transition-colors">{service.name}</h3>
+                      <p className="text-stone-600 text-xs font-light leading-relaxed mb-6">{service.description}</p>
+                    </div>
+                    <span className="text-accent font-bold text-[10px] uppercase tracking-widest group-hover:underline">
+                      Ver Detalles &rarr;
+                    </span>
+                  </div>
                 </Link>
               </motion.div>
             ))}
@@ -360,20 +384,33 @@ export default function Home() {
           </motion.div>
           
           <motion.div 
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 max-w-7xl mx-auto"
             initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={staggerContainer}
           >
-            {symptoms.map((sym) => (
+            {symptoms.slice(0, 5).map((sym) => (
               <motion.div key={sym.id} variants={fadeUp} className="h-full">
-                <Link href={`/sintomas/${sym.slug}`} className="bg-slate-50/50 border border-slate-200 hover:border-accent/40 p-6 flex flex-col justify-between h-full group transition-all duration-300 rounded-xl">
-                  <div>
-                    <span className="h-1.5 w-1.5 rounded-full bg-accent mb-4 block"></span>
-                    <h3 className="text-base font-serif text-primary mb-2 font-bold group-hover:text-accent transition-colors">{sym.name}</h3>
-                    <p className="text-stone-500 text-[11px] font-light leading-relaxed mb-6 line-clamp-3">{sym.description}</p>
+                <Link href={`/sintomas/${sym.slug}`} className="bg-slate-50/50 border border-slate-200 hover:border-accent/40 overflow-hidden flex flex-col justify-between h-full group transition-all duration-300 rounded-2xl">
+                  <div className="aspect-[4/3] relative overflow-hidden bg-slate-100">
+                    <img 
+                      src={sym.image} 
+                      alt={sym.name} 
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute top-3 left-3">
+                      <span className="inline-block px-2.5 py-0.5 bg-white/90 backdrop-blur-sm text-accent font-bold text-[8px] uppercase tracking-wider shadow-sm rounded-full">
+                        Síntoma
+                      </span>
+                    </div>
                   </div>
-                  <span className="text-accent font-bold text-[9px] uppercase tracking-widest">
-                    Valorar síntoma &rarr;
-                  </span>
+                  <div className="p-6 flex-grow flex flex-col justify-between">
+                    <div>
+                      <h3 className="text-base font-serif text-primary mb-2 font-bold group-hover:text-accent transition-colors">{sym.name}</h3>
+                      <p className="text-stone-500 text-[11px] font-light leading-relaxed mb-6 line-clamp-3">{sym.description}</p>
+                    </div>
+                    <span className="text-accent font-bold text-[9px] uppercase tracking-widest">
+                      Valorar síntoma &rarr;
+                    </span>
+                  </div>
                 </Link>
               </motion.div>
             ))}

@@ -63,10 +63,12 @@ export default async function DiseasePage({ params }: { params: Promise<{ slug: 
             <h1 className="text-4xl lg:text-5xl font-black mb-6 relative z-10">{disease.name}</h1>
             <p className="text-lg text-slate-300 relative z-10 leading-relaxed">{disease.description}</p>
           </div>
-          <div className="lg:w-1/2 min-h-[300px] bg-slate-200 rounded-[3rem] flex items-center justify-center border-4 border-white shadow-xl relative overflow-hidden group">
-             <div className="absolute inset-0 bg-slate-200 group-hover:scale-105 transition-transform duration-700 flex items-center justify-center">
-               <span className="text-slate-400 font-bold uppercase tracking-widest group-hover:text-primary transition-colors">Espacio Imagen Principal</span>
-             </div>
+          <div className="lg:w-1/2 min-h-[300px] bg-slate-200 rounded-[3rem] border-4 border-white shadow-xl relative overflow-hidden group">
+            <img 
+              src={disease.image} 
+              alt={disease.name} 
+              className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+            />
           </div>
         </FadeUp>
 

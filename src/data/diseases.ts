@@ -58,7 +58,7 @@ export const diseases: MedicalCondition[] = [
     ],
     relatedServices: ["manga-gastrica", "cirugia-de-estomago"],
     relatedSymptoms: ["dificultad-para-respirar", "hinchazon-abdominal", "perdida-de-apetito"],
-    image: "/images/diseases/obesidad.jpg",
+    image: "/enfermedades/obesidad.png",
     seo: {
       title: "Tratamiento Integral de Obesidad y Manga Gástrica en CDMX",
       description: "Recupere su salud con la cirugía de manga gástrica. Tratamiento especializado para la obesidad con el Dr. Daniel Guerra de Coss.",
@@ -120,7 +120,7 @@ export const diseases: MedicalCondition[] = [
     ],
     relatedServices: ["restitucion-de-transito-intestinal", "cirugia-de-estomago"],
     relatedSymptoms: ["dolor-abdominal", "nauseas-y-vomitos", "fiebre"],
-    image: "/images/diseases/abdomen-agudo.jpg",
+    image: "/enfermedades/abdomen_agudo.png",
     seo: {
       title: "Urgencias por Abdomen Agudo y Dolor Severo en CDMX",
       description: "Diagnóstico y cirugía de urgencia para abdomen agudo. Evite complicaciones graves de peritonitis. Dr. Daniel Guerra de Coss.",
@@ -181,7 +181,7 @@ export const diseases: MedicalCondition[] = [
     ],
     relatedServices: ["cirugia-de-higado-y-vias-biliares", "cirugia-de-estomago"],
     relatedSymptoms: ["dolor-abdominal", "nauseas-y-vomitos", "fiebre"],
-    image: "/images/diseases/colecistitis.jpg",
+    image: "/enfermedades/colecistitis.png",
     seo: {
       title: "Cirugía de Vesícula (Colecistitis) por Laparoscopia CDMX",
       description: "Tratamiento definitivo para piedras en la vesícula y colecistitis. Cirugía laparoscópica con el Dr. Daniel Guerra de Coss.",
@@ -240,7 +240,7 @@ export const diseases: MedicalCondition[] = [
     ],
     relatedServices: ["cirugia-de-higado-y-vias-biliares", "restitucion-de-transito-intestinal"],
     relatedSymptoms: ["dolor-abdominal", "nauseas-y-vomitos", "fiebre"],
-    image: "/images/diseases/coledocolitiasis.jpg",
+    image: "/enfermedades/coledocolitiasis.png",
     seo: {
       title: "Coledocolitiasis e Ictericia (Piedras en Vía Biliar) CDMX",
       description: "Diagnóstico y tratamiento avanzado para coledocolitiasis. Evite pancreatitis y colangitis con el Dr. Daniel Guerra de Coss.",
@@ -302,7 +302,7 @@ export const diseases: MedicalCondition[] = [
     ],
     relatedServices: ["tiroidectomia", "resection-de-lipomas"],
     relatedSymptoms: ["dificultad-para-tragar-sensacion-obstruccion", "tos-o-atragantamiento"],
-    image: "/images/diseases/bocio.jpg",
+    image: "/enfermedades/bocio.png",
     seo: {
       title: "Cirugía de Bocio Tiroideo y Tiroidectomía en CDMX",
       description: "Especialista en cirugía de tiroides. Tratamiento definitivo para bocio multinodular y cuello inflamado. Dr. Daniel Guerra de Coss.",
@@ -361,7 +361,7 @@ export const diseases: MedicalCondition[] = [
     ],
     relatedServices: ["tiroidectomia", "resection-de-lipomas"],
     relatedSymptoms: ["dificultad-para-tragar-sensacion-obstruccion", "tos-o-atragantamiento"],
-    image: "/images/diseases/nodulo-tiroideo.jpg",
+    image: "/enfermedades/nodulo-tiroideo.png",
     seo: {
       title: "Diagnóstico y Cirugía de Nódulo Tiroideo en CDMX",
       description: "Valoración experta de nódulos tiroideos. Biopsia y cirugía de tiroides con el cirujano general Dr. Daniel Guerra de Coss.",
@@ -422,7 +422,7 @@ export const diseases: MedicalCondition[] = [
     ],
     relatedServices: ["cirugia-de-higado-y-vias-biliares", "restitucion-de-transito-intestinal"],
     relatedSymptoms: ["dolor-abdominal", "nauseas-y-vomitos", "fiebre"],
-    image: "/images/diseases/pancreatitis.jpg",
+    image: "/enfermedades/pancreatitis.png",
     seo: {
       title: "Tratamiento de Pancreatitis Aguda en CDMX",
       description: "Especialista en el manejo de pancreatitis de origen biliar. Prevenga recaídas con cirugía de vesícula oportuna. Dr. Daniel Guerra de Coss.",
@@ -484,7 +484,7 @@ export const diseases: MedicalCondition[] = [
     ],
     relatedServices: ["cirugia-de-esofago", "cirugia-de-estomago"],
     relatedSymptoms: ["dificultad-para-tragar-sensacion-obstruccion", "regurgitacion", "tos-o-atragantamiento"],
-    image: "/images/diseases/disfagia.jpg",
+    image: "/enfermedades/disfagia.png",
     seo: {
       title: "Dificultad para Tragar (Disfagia) | Tratamiento en CDMX",
       description: "Estudio y cirugía para acalasia y dificultad para tragar. Recupere su capacidad de comer con el Dr. Daniel Guerra de Coss.",
@@ -545,7 +545,7 @@ export const diseases: MedicalCondition[] = [
     ],
     relatedServices: ["restitucion-de-transito-intestinal", "resection-de-lipomas"],
     relatedSymptoms: ["sangrado-rectal", "dolor-abdominal", "fiebre"],
-    image: "/images/diseases/anorrectal.jpg",
+    image: "/enfermedades/anorrectal.png",
     seo: {
       title: "Tratamiento de Hemorroides, Fisuras y Fístulas en CDMX",
       description: "Diagnóstico y cirugía especializada de patología anorrectal. Alivie el dolor y sangrado anal con el Dr. Daniel Guerra de Coss.",
@@ -603,7 +603,7 @@ export const diseases: MedicalCondition[] = [
     ],
     relatedServices: ["resection-de-lipomas", "tiroidectomia"],
     relatedSymptoms: ["dolor-abdominal", "fiebre"],
-    image: "/images/diseases/lipoma.jpg",
+    image: "/enfermedades/lipoma.png",
     seo: {
       title: "Extirpación de Lipomas y Quistes en Consultorio CDMX",
       description: "Cirugía ambulatoria de lipomas y quistes sebáceos sin dolor. Procedimiento estético con anestesia local. Dr. Daniel Guerra de Coss.",
@@ -664,7 +664,7 @@ export const diseases: MedicalCondition[] = [
     ],
     relatedServices: ["cirugia-de-esofago", "cirugia-de-estomago"],
     relatedSymptoms: ["regurgitacion", "dificultad-para-tragar-sensacion-obstruccion", "tos-o-atragantamiento"],
-    image: "/images/diseases/reflujo.jpg",
+    image: "/enfermedades/reflujo.png",
     seo: {
       title: "Cirugía de Reflujo y Hernia Hiatal (Laparoscopia) CDMX",
       description: "Tratamiento definitivo antirreflujo. Elimine la acidez y cure la hernia hiatal con el Dr. Daniel Guerra de Coss.",
@@ -722,7 +722,7 @@ export const diseases: MedicalCondition[] = [
     ],
     relatedServices: ["restitucion-de-transito-intestinal", "manejo-de-estomas"],
     relatedSymptoms: ["hinchazon-abdominal", "dolor-abdominal", "nauseas-y-vomitos"],
-    image: "/images/diseases/hernia.jpg",
+    image: "/enfermedades/hernia.png",
     seo: {
       title: "Operación de Hernia Inguinal y Umbilical con Malla CDMX",
       description: "Cirugía laparoscópica de hernia inguinal sin dolor. Reparación segura de pared abdominal con el Dr. Daniel Guerra de Coss.",
