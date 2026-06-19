@@ -43,7 +43,7 @@ export default function Header() {
           <img 
             src="/images/Logo_Daniel Guerra PNG H.png" 
             alt={`Logo ${doctor.title} ${doctor.name}`}
-            className="h-12 w-auto object-contain hidden sm:block"
+            className="h-16 w-auto object-contain hidden sm:block"
             onError={(e) => {
               e.currentTarget.style.display = 'none';
             }}
@@ -51,7 +51,7 @@ export default function Header() {
           <img 
             src="/images/Logo_Daniel Guerra PNG.png" 
             alt={`Logo Icon ${doctor.title} ${doctor.name}`}
-            className="h-10 w-auto object-contain sm:hidden"
+            className="h-14 w-auto object-contain sm:hidden"
             onError={(e) => {
               e.currentTarget.style.display = 'none';
             }}

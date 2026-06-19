@@ -1,22 +1,23 @@
 "use client";
 
-import { doctor, offices } from "@/data/doctor";
+import { useState, useEffect } from "react";
+import { doctor, offices, doctorPhotos } from "@/data/doctor";
 import { services } from "@/data/services";
 import { symptoms } from "@/data/symptoms";
 import { diseases } from "@/data/diseases";
-import { 
-  FaCalendarCheck, 
-  FaWhatsapp, 
-  FaAward, 
-  FaUniversity, 
-  FaCertificate, 
-  FaHospitalSymbol, 
-  FaMoneyBillWave, 
-  FaExchangeAlt, 
-  FaCreditCard, 
-  FaShieldAlt, 
-  FaCheckCircle, 
-  FaStethoscope, 
+import {
+  FaCalendarCheck,
+  FaWhatsapp,
+  FaAward,
+  FaUniversity,
+  FaCertificate,
+  FaHospitalSymbol,
+  FaMoneyBillWave,
+  FaExchangeAlt,
+  FaCreditCard,
+  FaShieldAlt,
+  FaCheckCircle,
+  FaStethoscope,
   FaHeartbeat,
   FaArrowRight
 } from "react-icons/fa";
@@ -25,7 +26,37 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function Home() {
+  const [activePhotoIndex, setActivePhotoIndex] = useState<number | null>(null);
+  const [currentHeroIndex, setCurrentHeroIndex] = useState(0);
+
+  const heroImages = [
+    "/doctor-hero.jpg",
+    "/doctor-hero-2.jpg",
+    "/doctor-hero-3.jpg"
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentHeroIndex((prev) => (prev + 1) % heroImages.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   const whatsappUrl = `https://wa.me/${doctor.whatsapp.replace(/\D/g, "")}`;
+
+  const handlePrevPhoto = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (activePhotoIndex !== null) {
+      setActivePhotoIndex((prev) => (prev === 0 ? doctorPhotos.length - 1 : prev! - 1));
+    }
+  };
+
+  const handleNextPhoto = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (activePhotoIndex !== null) {
+      setActivePhotoIndex((prev) => (prev === doctorPhotos.length - 1 ? 0 : prev! + 1));
+    }
+  };
 
   const homeSchema = {
     "@context": "https://schema.org",
@@ -59,12 +90,12 @@ export default function Home() {
 
       {/* Glow effects - Midnight Obsidian & Dark Navy */}
       <div className="absolute top-0 right-0 -z-20 w-full h-full overflow-hidden pointer-events-none opacity-40">
-        <motion.div 
+        <motion.div
           className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-accent/15 rounded-full blur-[140px] animate-surgical-glow"
         />
-        <motion.div 
+        <motion.div
           className="absolute bottom-[20%] left-[-10%] w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px]"
-          animate={{ scale: [1, 1.15, 1], opacity: [0.3, 0.6, 0.3] }} 
+          animate={{ scale: [1, 1.15, 1], opacity: [0.3, 0.6, 0.3] }}
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
         />
       </div>
@@ -73,24 +104,24 @@ export default function Home() {
       <section className="relative min-h-[calc(100vh-120px)] flex items-center pt-12 pb-24">
         <div className="container mx-auto px-6">
           <div className="flex flex-col lg:flex-row gap-16 items-center">
-            
+
             {/* Left: Copy */}
             <motion.div className="flex-grow lg:w-7/12 text-center lg:text-left z-10" initial="hidden" animate="visible" variants={fadeUp}>
-              <motion.span 
+              <motion.span
                 className="inline-block px-5 py-2 bg-white text-primary font-bold text-xs uppercase tracking-widest mb-6 border border-primary/20 shadow-sm"
               >
                 {doctor.specialty} • {doctor.subspecialty}
               </motion.span>
-              
+
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary leading-tight tracking-tight mb-6 font-serif">
                 Cirugía Bariátrica y Digestiva <br />
                 <span className="text-accent">para recuperar tu salud y bienestar.</span>
               </h1>
-              
+
               <p className="text-base sm:text-lg text-stone-700 mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light">
                 Tratamiento laparoscópico avanzado para la obesidad (Manga Gástrica), reflujo, hernias y enfermedades de vesícula en Ciudad de México y Tuxtla Gutiérrez.
               </p>
-              
+
               <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
                 <a href={whatsappUrl} target="_blank" rel="noreferrer" className="px-10 py-4.5 bg-primary hover:bg-accent text-white font-bold text-xs uppercase tracking-widest transition-all duration-300 border border-primary hover:border-accent flex items-center justify-center gap-3 shadow-lg shadow-primary/20">
                   <FaCalendarCheck size={14} /> Agendar Valoración
@@ -101,41 +132,48 @@ export default function Home() {
               </div>
             </motion.div>
 
-            {/* Right: Brand Design Box */}
-            <motion.div 
-              className="lg:w-5/12 w-full h-[400px] lg:h-[550px] relative mt-10 lg:mt-0" 
-              initial={{ opacity: 0, scale: 0.95 }} 
-              animate={{ opacity: 1, scale: 1 }} 
+            {/* Right: Doctor's Professional Photo */}
+            <motion.div
+              className="lg:w-5/12 w-full h-[450px] lg:h-[600px] relative mt-10 lg:mt-0"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <div className="w-full h-full border border-primary/20 bg-white p-8 flex flex-col justify-between relative overflow-hidden group shadow-lg rounded-3xl">
-                {/* Background logo watermark */}
-                <div className="absolute -right-16 -bottom-16 p-4 opacity-5 text-primary">
-                  <FaHeartbeat size={320} />
-                </div>
-                
-                <div className="flex justify-between items-start">
-                  <img 
-                    src="/images/Logo_Daniel Guerra PNG.png" 
-                    alt="Logo Icon" 
-                    className="h-10 w-auto object-contain"
+              <div className="w-full h-full relative overflow-hidden rounded-[3rem] border-4 border-white shadow-2xl group bg-slate-100">
+                {heroImages.map((src, index) => (
+                  <motion.img
+                    key={src}
+                    src={src}
+                    alt={`Dr. Daniel Guerra de Coss`}
+                    className="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-700"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: index === currentHeroIndex ? 1 : 0 }}
+                    transition={{ duration: 1.0, ease: "easeInOut" }}
                   />
-                  <span className="h-2 w-2 rounded-full bg-accent animate-pulse-slow"></span>
+                ))}
+
+                {/* Carousel Indicators */}
+                <div className="absolute top-6 right-6 flex gap-2 z-20 bg-black/20 backdrop-blur-md px-3 py-2 rounded-full border border-white/10">
+                  {heroImages.map((_, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => setCurrentHeroIndex(idx)}
+                      className={`w-2 h-2 rounded-full transition-all duration-300 ${idx === currentHeroIndex ? "bg-white scale-125 shadow-sm" : "bg-white/40 hover:bg-white/70"
+                        }`}
+                      aria-label={`Ir a foto ${idx + 1}`}
+                    />
+                  ))}
                 </div>
 
-                <div className="my-auto text-center py-8">
-                  <FaStethoscope className="text-accent mx-auto text-5xl mb-6 animate-pulse-slow" />
-                  <h3 className="text-3xl font-serif text-primary mb-2 font-bold">{doctor.title} {doctor.name}</h3>
-                  <p className="text-xs uppercase tracking-widest font-semibold text-stone-500">{doctor.specialistTitle}</p>
-                </div>
-
-                {/* Academic credentials card footer */}
-                <div className="border-t border-border pt-6 flex justify-between items-center text-xs">
-                  <div className="flex items-center gap-2">
-                    <FaAward className="text-accent" />
-                    <span className="font-semibold text-primary uppercase tracking-wider">Alta Especialidad</span>
+                {/* Floating academic overlay */}
+                <div className="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-md border border-white/20 p-6 rounded-3xl shadow-lg flex justify-between items-center z-10">
+                  <div>
+                    <h3 className="text-lg font-serif text-primary font-bold">{doctor.title} {doctor.name}</h3>
+                    <p className="text-[10px] text-stone-500 uppercase tracking-widest font-semibold mt-1">{doctor.specialistTitle}</p>
                   </div>
-                  <span className="font-bold text-accent tracking-widest uppercase">UAG • UNAM</span>
+                  <span className="text-[10px] font-bold text-accent tracking-widest uppercase border border-accent/25 px-3 py-1.5 rounded-full">
+                    UAG • UNAM
+                  </span>
                 </div>
               </div>
             </motion.div>
@@ -147,22 +185,32 @@ export default function Home() {
       {/* 2. BIO & CREDENTIALS */}
       <section className="py-28 bg-white border-y border-border">
         <div className="container mx-auto px-6">
-          <motion.div 
+          <motion.div
             className="flex flex-col lg:flex-row gap-16 max-w-7xl mx-auto"
             initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer}
           >
-            
-            {/* Left Column: Bio Card */}
-            <motion.div className="lg:w-2/5" variants={fadeUp}>
-              <div className="border border-primary/10 bg-slate-50/50 p-10 lg:p-14 sticky top-32 flex flex-col justify-between h-auto shadow-sm rounded-3xl">
+
+            {/* Left Column: Photo & Bio Card */}
+            <motion.div className="lg:w-2/5 flex flex-col gap-8" variants={fadeUp}>
+              {/* Doctor's Photo in About Me */}
+              <div className="w-full h-[400px] relative overflow-hidden rounded-[2.5rem] border-4 border-white shadow-xl bg-slate-100 group">
+                <img
+                  src="/doctor-aboutme.jpg"
+                  alt={`Dr. Daniel Guerra de Coss en consulta`}
+                  className="w-full h-full object-cover object-top group-hover:scale-102 transition-transform duration-700"
+                />
+              </div>
+
+              {/* Philosophy Card */}
+              <div className="border border-primary/10 bg-slate-50/50 p-10 lg:p-12 flex flex-col justify-between h-auto shadow-sm rounded-3xl">
                 <span className="text-[10px] font-bold text-accent uppercase tracking-widest mb-6 block">Filosofía Médica</span>
-                <p className="text-2xl font-serif text-primary italic leading-relaxed mb-8">
+                <p className="text-xl font-serif text-primary italic leading-relaxed mb-6">
                   "{doctor.philosophy}"
                 </p>
-                <div className="h-[1px] w-12 bg-accent mb-8" />
+                <div className="h-[1px] w-12 bg-accent mb-6" />
                 <div>
-                  <h4 className="font-bold text-primary text-sm uppercase tracking-wider mb-2">{doctor.title} {doctor.name}</h4>
-                  <p className="text-xs text-stone-500 uppercase tracking-widest">{doctor.subspecialty}</p>
+                  <h4 className="font-bold text-primary text-sm uppercase tracking-wider mb-1">{doctor.title} {doctor.name}</h4>
+                  <p className="text-[11px] text-stone-500 uppercase tracking-widest">{doctor.subspecialty}</p>
                 </div>
               </div>
             </motion.div>
@@ -172,7 +220,7 @@ export default function Home() {
               <motion.h3 variants={fadeUp} className="text-3xl font-serif text-primary mb-8 font-bold flex items-center gap-3">
                 <span className="h-1.5 w-1.5 bg-accent rounded-full" /> Trayectoria y Acreditaciones
               </motion.h3>
-              
+
               <motion.p variants={fadeUp} className="text-stone-700 font-light leading-relaxed mb-12 text-sm sm:text-base">
                 {doctor.bio}
               </motion.p>
@@ -187,7 +235,7 @@ export default function Home() {
                     </p>
                   </div>
                 </motion.div>
-                
+
                 <motion.div variants={fadeUp} className="p-8 border border-border hover:border-accent/30 transition-all duration-300 bg-white shadow-sm flex flex-col justify-between rounded-2xl">
                   <FaHospitalSymbol className="text-accent text-3xl mb-6" />
                   <div>
@@ -227,7 +275,7 @@ export default function Home() {
 
           <div className="max-w-4xl mx-auto bg-white rounded-3xl border border-slate-200 p-8 lg:p-12 shadow-md">
             <div className="flex flex-col md:flex-row gap-12 items-center">
-              
+
               {/* Before and After Visuals */}
               <div className="w-full md:w-1/2 flex gap-4">
                 <div className="w-1/2 bg-slate-100 border border-slate-200 p-6 text-center rounded-2xl">
@@ -274,8 +322,8 @@ export default function Home() {
               Tratamiento definitivo para patologías de pared abdominal, digestivas y metabólicas.
             </p>
           </motion.div>
-          
-          <motion.div 
+
+          <motion.div
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto"
             initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={staggerContainer}
           >
@@ -283,9 +331,9 @@ export default function Home() {
               <motion.div key={disease.id} variants={fadeUp} className="h-full">
                 <Link href={`/enfermedades/${disease.slug}`} className="bg-slate-50/50 border border-slate-200 hover:border-accent/40 overflow-hidden flex flex-col justify-between h-full group hover:shadow-md hover:bg-white transition-all duration-300 rounded-3xl">
                   <div className="aspect-[16/10] relative overflow-hidden bg-slate-100">
-                    <img 
-                      src={disease.image} 
-                      alt={disease.name} 
+                    <img
+                      src={disease.image}
+                      alt={disease.name}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                     <div className="absolute top-4 left-4">
@@ -330,8 +378,8 @@ export default function Home() {
               Cirugía general y bariátrica mediante técnicas laparoscópicas avanzadas de mínima invasión.
             </p>
           </motion.div>
-          
-          <motion.div 
+
+          <motion.div
             className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto"
             initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={staggerContainer}
           >
@@ -339,9 +387,9 @@ export default function Home() {
               <motion.div key={service.id} variants={fadeUp} className="h-full">
                 <Link href={`/servicios/${service.slug}`} className="bg-white border border-slate-200 hover:border-accent/30 flex flex-col sm:flex-row h-full group hover:shadow-lg transition-all duration-300 rounded-3xl overflow-hidden">
                   <div className="sm:w-5/12 aspect-[16/10] sm:aspect-auto relative overflow-hidden bg-slate-100 min-h-[200px]">
-                    <img 
-                      src={service.image} 
-                      alt={service.name} 
+                    <img
+                      src={service.image}
+                      alt={service.name}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                     <div className="absolute top-4 left-4">
@@ -382,8 +430,8 @@ export default function Home() {
               Identifique los síntomas gastrointestinales y de pared abdominal que requieren de un cirujano especialista.
             </p>
           </motion.div>
-          
-          <motion.div 
+
+          <motion.div
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 max-w-7xl mx-auto"
             initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={staggerContainer}
           >
@@ -391,9 +439,9 @@ export default function Home() {
               <motion.div key={sym.id} variants={fadeUp} className="h-full">
                 <Link href={`/sintomas/${sym.slug}`} className="bg-slate-50/50 border border-slate-200 hover:border-accent/40 overflow-hidden flex flex-col justify-between h-full group transition-all duration-300 rounded-2xl">
                   <div className="aspect-[4/3] relative overflow-hidden bg-slate-100">
-                    <img 
-                      src={sym.image} 
-                      alt={sym.name} 
+                    <img
+                      src={sym.image}
+                      alt={sym.name}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                     <div className="absolute top-3 left-3">
@@ -429,14 +477,14 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 max-w-6xl mx-auto"
             initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={staggerContainer}
           >
-            
+
             {/* Left Block: Precio & Metodos (Spans 7 cols) */}
             <motion.div variants={fadeUp} className="lg:col-span-7 flex flex-col gap-6 h-full">
-              
+
               {/* Costo Box */}
               <div className="border border-slate-200 bg-white p-8 flex flex-col sm:flex-row items-center justify-between gap-6 hover:border-accent/30 transition-all duration-300 group rounded-2xl">
                 <div>
@@ -476,13 +524,13 @@ export default function Home() {
             {/* Right Block: Seguro/Presupuesto (Spans 5 cols) */}
             <motion.div variants={fadeUp} className="lg:col-span-5 bg-primary text-white p-10 shadow-xl relative overflow-hidden flex flex-col justify-between group rounded-3xl">
               <FaShieldAlt className="absolute -right-8 -bottom-8 text-8xl opacity-10 group-hover:scale-125 transition-transform duration-700 ease-out" />
-              
+
               <div className="relative z-10">
                 <div className="inline-flex items-center gap-2 bg-white/10 px-4 py-2 border border-white/20 mb-6 backdrop-blur-sm">
                   <FaShieldAlt className="text-accent" />
                   <span className="font-bold text-[9px] tracking-widest uppercase">Gastos Médicos Mayores</span>
                 </div>
-                
+
                 <h3 className="text-2xl font-serif font-bold mb-4">Seguros y Presupuestos</h3>
                 <p className="text-slate-300 text-xs font-light mb-8 leading-relaxed">
                   ¿Cuenta con un seguro de gastos médicos mayores o requiere un presupuesto quirúrgico para su aseguradora? Apoyamos en la gestión de su trámite médico de manera transparente.
@@ -529,6 +577,98 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* 9. GALLERY SECTION */}
+      <section className="py-24 bg-slate-50 border-t border-border overflow-hidden">
+        <div className="container mx-auto px-6">
+          <motion.div className="text-center mb-16" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
+            <span className="text-[10px] font-bold text-accent uppercase tracking-widest mb-3 block">Galería Profesional</span>
+            <h2 className="text-4xl font-serif text-primary mb-4 font-bold">El Doctor en su Entorno</h2>
+            <p className="text-stone-600 max-w-2xl mx-auto font-light text-sm">
+              Instalaciones, consulta y práctica médica de alta especialidad.
+            </p>
+          </motion.div>
+
+          <motion.div
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-7xl mx-auto"
+            initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={staggerContainer}
+          >
+            {doctorPhotos.map((photo, index) => (
+              <motion.div
+                key={index}
+                variants={fadeUp}
+                className={`h-full cursor-pointer overflow-hidden rounded-3xl border border-slate-200 shadow-sm bg-white hover:shadow-lg transition-all duration-300 group ${index === 0 ? "sm:col-span-2 sm:row-span-2 aspect-[4/3] sm:aspect-auto" : "aspect-[4/3]"
+                  }`}
+                onClick={() => setActivePhotoIndex(index)}
+              >
+                <div className="relative w-full h-full overflow-hidden">
+                  <img
+                    src={photo}
+                    alt={`Dr. Daniel Guerra - Foto ${index + 1}`}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <span className="bg-white/90 backdrop-blur-sm text-primary text-[10px] font-bold uppercase tracking-widest px-4 py-2 shadow-md">
+                      Ver Imagen
+                    </span>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* LIGHTBOX MODAL */}
+      {activePhotoIndex !== null && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-md flex items-center justify-center select-none"
+          onClick={() => setActivePhotoIndex(null)}
+        >
+          {/* Close button */}
+          <button
+            className="absolute top-6 right-6 text-white/85 hover:text-white bg-white/10 hover:bg-white/20 w-12 h-12 flex items-center justify-center rounded-full transition-all text-2xl font-bold"
+            onClick={() => setActivePhotoIndex(null)}
+          >
+            &times;
+          </button>
+
+          {/* Prev button */}
+          <button
+            className="absolute left-6 text-white/85 hover:text-white bg-white/10 hover:bg-white/20 w-14 h-14 flex items-center justify-center rounded-full transition-all text-3xl"
+            onClick={handlePrevPhoto}
+          >
+            &#8249;
+          </button>
+
+          {/* Image Container */}
+          <motion.div
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            className="relative max-w-[90vw] max-h-[80vh] flex items-center justify-center"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={doctorPhotos[activePhotoIndex]}
+              alt="Dr. Daniel Guerra - Vista Previa"
+              className="max-w-full max-h-[80vh] object-contain shadow-2xl rounded-2xl border border-white/10"
+            />
+            <div className="absolute bottom-[-40px] left-0 right-0 text-center text-white/60 text-[11px] font-bold tracking-widest uppercase">
+              Foto {activePhotoIndex + 1} de {doctorPhotos.length}
+            </div>
+          </motion.div>
+
+          {/* Next button */}
+          <button
+            className="absolute right-6 text-white/85 hover:text-white bg-white/10 hover:bg-white/20 w-14 h-14 flex items-center justify-center rounded-full transition-all text-3xl"
+            onClick={handleNextPhoto}
+          >
+            &#8250;
+          </button>
+        </motion.div>
+      )}
 
     </div>
   );

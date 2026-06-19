@@ -19,7 +19,7 @@ export default function Footer() {
               <img 
                 src="/images/Logo_Daniel Guerra PNG H BLANCO.png" 
                 alt={`Logo ${doctor.title} ${doctor.name}`}
-                className="h-12 w-auto object-contain self-start"
+                className="h-20 w-auto object-contain self-start"
               />
               <span className="text-white text-base font-bold uppercase tracking-wider mt-2">
                 {doctor.title} {doctor.name}

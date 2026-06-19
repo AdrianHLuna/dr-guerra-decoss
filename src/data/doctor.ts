@@ -113,3 +113,13 @@ export const offices = [
     googleMapsUrl: "https://maps.google.com/?q=21a+poniente+Sur+103,+Penipak,+29060+Tuxtla+Guti%C3%A9rrez,+Chiapas"
   }
 ];
+
+export const doctorPhotos = [
+  "/images/DSC02523.jpg",
+  "/images/DSC02526.jpg",
+  "/images/DSC02529.jpg",
+  "/images/DSC02530.jpg",
+  "/images/DSC02541.jpg",
+  "/images/DSC02547.jpg",
+  "/images/DSC02550.jpg"
+];
