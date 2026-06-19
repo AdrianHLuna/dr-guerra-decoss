@@ -32,7 +32,7 @@ export const services: MedicalService[] = [
       "Estancia Hospitalaria": "1 a 2 noches recomendadas"
     },
     relatedConditions: ["obesidad-y-sobrepeso"],
-    image: "/images/services/manga-gastrica.jpg",
+    image: "/servicios/Manga-Gastrica.png",
     seo: {
       title: "Manga Gástrica en CDMX | Promoción Cirugía Bariátrica",
       description: "Cirugía de manga gástrica laparoscópica. Pérdida de peso segura con el Dr. Daniel Guerra de Coss. Precios desde $80,000 MXN.",
@@ -69,7 +69,7 @@ export const services: MedicalService[] = [
       "Días de Hospitalización": "3 a 5 días promedio para vigilar tolerancia alimentaria"
     },
     relatedConditions: ["abdomen-agudo", "enfermedades-ano-recto"],
-    image: "/images/services/restitucion.jpg",
+    image: "/servicios/transito-intestinal.png",
     seo: {
       title: "Restitución de Tránsito Intestinal (Cierre de Estoma) CDMX",
       description: "Cirugía reconstructiva para reconexión de colon e intestino. Elimine la bolsa de colostomía con el Dr. Daniel Guerra de Coss.",
@@ -100,7 +100,7 @@ export const services: MedicalService[] = [
     ],
     priceRange: "Consulta de especialidad: $1,200 MXN",
     relatedConditions: ["hernia-inguinal-pared-abdominal", "enfermedades-ano-recto"],
-    image: "/images/services/estomas.jpg",
+    image: "/servicios/estomas.png",
     seo: {
       title: "Manejo y Corrección Quirúrgica de Estomas en CDMX",
       description: "Cuidado especializado de colostomías e ileostomías. Reparación de hernias paraestomales con el Dr. Daniel Guerra de Coss.",
@@ -137,7 +137,7 @@ export const services: MedicalService[] = [
       "Estancia Promedio": "1 a 2 noches hospitalarias"
     },
     relatedConditions: ["disfagia", "reflujo-gastroesofagico-hernia-hiatal"],
-    image: "/images/services/esofago.jpg",
+    image: "/servicios/esofago.png",
     seo: {
       title: "Cirugía de Esófago y Acalasia (Miotomía de Heller) CDMX",
       description: "Cirugía laparoscópica de esófago para acalasia y disfagia severa. Especialista en tracto digestivo Dr. Daniel Guerra de Coss.",
@@ -174,7 +174,7 @@ export const services: MedicalService[] = [
       "Monitoreo": "Estricto control de sangrado y fugas con pruebas neumáticas o de colorantes"
     },
     relatedConditions: ["reflujo-gastroesofagico-hernia-hiatal", "abdomen-agudo", "obesidad-y-sobrepeso"],
-    image: "/images/services/estomago.jpg",
+    image: "/servicios/estomago.png",
     seo: {
       title: "Cirugía Gástrica y Hernia Hiatal Laparoscópica CDMX",
       description: "Cirugía de estómago por úlceras, tumores o hernia hiatal gigante. Alta especialidad con el Dr. Daniel Guerra de Coss.",
@@ -211,7 +211,7 @@ export const services: MedicalService[] = [
       "Estancia Hospitalaria": "2 a 4 días promedio"
     },
     relatedConditions: ["abdomen-agudo", "hernia-inguinal-pared-abdominal"],
-    image: "/images/services/intestino.jpg",
+    image: "/servicios/intestino.png",
     seo: {
       title: "Cirugía de Intestino Delgado y Obstrucción Intestinal CDMX",
       description: "Liberación de adherencias y resección intestinal por mínima invasión. Cirujano de urgencia Dr. Daniel Guerra de Coss.",
@@ -248,7 +248,7 @@ export const services: MedicalService[] = [
       "Dispositivos": "Coaguladores avanzados de energía ultrasónica o bipolar"
     },
     relatedConditions: ["colecistitis", "coledocolitiasis", "pancreatitis"],
-    image: "/images/services/higado.jpg",
+    image: "/servicios/higado.png",
     seo: {
       title: "Cirugía de Hígado y Vías Biliares en CDMX | Dr. Guerra",
       description: "Cirugía compleja de vía biliar, colédoco y quistes hepáticos. Especialista en tracto digestivo Dr. Daniel Guerra de Coss.",
@@ -285,7 +285,7 @@ export const services: MedicalService[] = [
       "Hospitalización": "1 noche recomendada"
     },
     relatedConditions: ["bocio-tiroideo", "nodulo-tiroideo"],
-    image: "/images/services/tiroidectomia.jpg",
+    image: "/servicios/tiroidectomia.png",
     seo: {
       title: "Tiroidectomía (Cirugía de Tiroides) en CDMX | Dr. Guerra",
       description: "Extirpación de tiroides por nódulo o bocio con técnica microquirúrgica estética. Dr. Daniel Guerra de Coss, Cirujano.",
@@ -316,7 +316,7 @@ export const services: MedicalService[] = [
     ],
     priceRange: "Desde $3,500 MXN (según tamaño y cantidad)",
     relatedConditions: ["lipomas-y-tumores-piel"],
-    image: "/images/services/lipomas.jpg",
+    image: "/servicios/lipomas.png",
     seo: {
       title: "Retirar Bola de Grasa y Quistes (Cirugía Ambulatoria) CDMX",
       description: "Extirpación rápida y estética de lipomas y quistes sebáceos con anestesia local. Cirujano General Dr. Daniel Guerra de Coss.",
@@ -352,7 +352,7 @@ export const services: MedicalService[] = [
       "Estancia": "Ambulatoria o 1 día hospitalario"
     },
     relatedConditions: ["colecistitis", "coledocolitiasis", "pancreatitis"],
-    image: "/images/services/colecistectomia.jpg",
+    image: "/servicios/colecistectomia.png",
     seo: {
       title: "Colecistectomía Laparoscópica (Cirugía de Vesícula) CDMX",
       description: "Cirugía de vesícula biliar de mínima invasión. Evite cólicos y complicaciones. Dr. Daniel Guerra de Coss, Cirujano General.",
@@ -382,7 +382,7 @@ export const services: MedicalService[] = [
     ],
     priceRange: "$1,200 MXN",
     relatedConditions: ["obesidad-y-sobrepeso", "abdomen-agudo", "reflujo-gastroesofagico-hernia-hiatal", "hernia-inguinal-pared-abdominal"],
-    image: "/images/services/consulta.jpg",
+    image: "/servicios/consulta.png",
     seo: {
       title: "Consulta con Cirujano General y Bariatra en CDMX | Dr. Guerra",
       description: "Valoración de cirugía de vesícula, hernias, reflujo y manga gástrica. Precio de consulta $1,200 MXN. CDMX y Chiapas.",
