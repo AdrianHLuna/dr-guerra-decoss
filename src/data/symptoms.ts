@@ -15,7 +15,7 @@ export const symptoms: Symptom[] = [
     ],
     whyConsult: "Debe consultar de urgencia si el dolor abdominal es continuo por más de 4 horas, si aumenta de intensidad al moverse o toser, si se acompaña de abdomen rígido (duro como una tabla), o si se presenta fiebre y vómitos repetitivos.",
     relatedConditions: ["Abdomen Agudo", "Colecistitis", "Coledocolitiasis", "Pancreatitis", "Hernia Inguinal y de Pared Abdominal"],
-    image: "/images/symptoms/dolor-abdominal.jpg",
+    image: "/sintomas/dolor-abdominal.png",
     seo: {
       title: "Dolor Abdominal Agudo y Sospecha Quirúrgica en CDMX",
       description: "Valoración urgente de dolor abdominal agudo. Evite complicaciones graves de peritonitis. Dr. Daniel Guerra de Coss.",
@@ -35,7 +35,7 @@ export const symptoms: Symptom[] = [
     ],
     whyConsult: "La presencia de vómito biliar (líquido verdoso/amarillento), vómito con sangre o la incapacidad absoluta de retener líquidos durante un día son indicaciones directas para una valoración de urgencia con el cirujano general.",
     relatedConditions: ["Abdomen Agudo", "Colecistitis", "Pancreatitis", "Reflujo Gastroesofágico y Hernia Hiatal"],
-    image: "/images/symptoms/nauseas-vomitos.jpg",
+    image: "/sintomas/nauseas-vomitos.png",
     seo: {
       title: "Causas de Náuseas y Vómitos Persistentes | Dr. Guerra",
       description: "El vómito persistente puede indicar obstrucción de intestinos o vesícula inflamada. Agende consulta de valoración.",
@@ -55,7 +55,7 @@ export const symptoms: Symptom[] = [
     ],
     whyConsult: "Si presenta fiebre acompañada de dolor abdominal intenso, escalofríos, piel amarillenta o confusión mental, es una urgencia médica que debe valorarse de inmediato para evitar un shock séptico.",
     relatedConditions: ["Abdomen Agudo", "Colecistitis", "Coledocolitiasis", "Pancreatitis", "Lipomas y Tumores de Piel"],
-    image: "/images/symptoms/fiebre.jpg",
+    image: "/sintomas/fiebre.png",
     seo: {
       title: "Fiebre y Dolor Abdominal (Infección Quirúrgica) CDMX",
       description: "La fiebre con dolor de abdomen puede sugerir apendicitis o vesícula infectada. Solicite consulta de urgencia.",
@@ -75,7 +75,7 @@ export const symptoms: Symptom[] = [
     ],
     whyConsult: "Si la hinchazón abdominal se acompaña de incapacidad absoluta para evacuar o canalizar gases por más de 24 horas, dolor cólico progresivo y vómitos, requiere descartar urgentemente una obstrucción intestinal.",
     relatedConditions: ["Obesidad y Sobrepeso", "Abdomen Agudo", "Hernia Inguinal y de Pared Abdominal"],
-    image: "/images/symptoms/hinchazon.jpg",
+    image: "/sintomas/hinchazon.png",
     seo: {
       title: "Hinchazón Abdominal y Obstrucción Intestinal | Dr. Guerra",
       description: "Distensión del abdomen severa con dolor. Conozca cuándo puede ser una hernia o bloqueo que requiere cirugía.",
@@ -95,7 +95,7 @@ export const symptoms: Symptom[] = [
     ],
     whyConsult: "Una pérdida de apetito persistente que se acompaña de pérdida involuntaria de peso, náuseas recurrentes o dolor progresivo en el cuello o abdomen debe ser investigada clínicamente.",
     relatedConditions: ["Obesidad y Sobrepeso", "Abdomen Agudo", "Bocio Tiroideo", "Pancreatitis", "Disfagia"],
-    image: "/images/symptoms/perdida-apetito.jpg",
+    image: "/sintomas/perdida-apetito.png",
     seo: {
       title: "Pérdida de Apetito y Síntomas Gastrointestinales CDMX",
       description: "Hiporexia persistente asociada a dolor. Descarte problemas de tiroides o tracto digestivo con el Dr. Daniel Guerra.",
@@ -115,7 +115,7 @@ export const symptoms: Symptom[] = [
     ],
     whyConsult: "La disnea progresiva en reposo, o la sensación de asfixia al acostarse boca arriba debido a un abultamiento en el cuello (bocio) o exceso de peso corporal, son indicaciones directas para acudir a valoración quirúrgica.",
     relatedConditions: ["Obesidad y Sobrepeso", "Bocio Tiroideo", "Pancreatitis", "Abdomen Agudo"],
-    image: "/images/symptoms/dificultad-respirar.jpg",
+    image: "/sintomas/dificultad-respirar.png",
     seo: {
       title: "Dificultad para Respirar por Obesidad o Bocio CDMX",
       description: "La disnea por sobrepeso o compresión de cuello requiere valoración quirúrgica. Dr. Daniel Guerra de Coss.",
@@ -135,7 +135,7 @@ export const symptoms: Symptom[] = [
     ],
     whyConsult: "La hipotensión severa, confusión mental, respiración muy rápida, frialdad en extremidades y cese de la producción de orina son signos de shock. Requiere llamar a ambulancia u hospitalización de emergencia inmediata.",
     relatedConditions: ["Abdomen Agudo", "Pancreatitis", "Coledocolitiasis"],
-    image: "/images/symptoms/shock.jpg",
+    image: "/sintomas/shock.png",
     seo: {
       title: "Shock Séptico y Emergencias Quirúrgicas en CDMX",
       description: "Insuficiencia multiorgánica por peritonitis o colangitis. Información de urgencia crítica con el Dr. Daniel Guerra.",
@@ -155,7 +155,7 @@ export const symptoms: Symptom[] = [
     ],
     whyConsult: "Si siente dificultad constante al comer sólidos, dolor al tragar (odinofagia), o si ha tenido que modificar su dieta a puros líquidos para poder alimentarse, acuda de inmediato con el cirujano especialista en aparato digestivo.",
     relatedConditions: ["Disfagia", "Bocio Tiroideo", "Nódulo Tiroideo", "Reflujo Gastroesofágico y Hernia Hiatal"],
-    image: "/images/symptoms/dificultad-tragar.jpg",
+    image: "/sintomas/dificultad-tragar.png",
     seo: {
       title: "Dificultad para Tragar (Disfagia) en Cuello y Esófago CDMX",
       description: "Estudio de causas de comida atorada. Tratamiento de acalasia o bocio con el Dr. Daniel Guerra de Coss.",
@@ -175,7 +175,7 @@ export const symptoms: Symptom[] = [
     ],
     whyConsult: "Debe consultar si la regurgitación es frecuente, se presenta por las noches provocando tos o sensación de ahogo, o si el contenido regurgitado tiene sabor amargo extremo y está lesionando la mucosa de su garganta.",
     relatedConditions: ["Reflujo Gastroesofágico y Hernia Hiatal", "Disfagia"],
-    image: "/images/symptoms/regurgitacion.jpg",
+    image: "/sintomas/regurgitacion.png",
     seo: {
       title: "Tratamiento de Regurgitación de Alimento y Ácido en CDMX",
       description: "El regreso de comida o ácido a la boca sugiere hernia hiatal o acalasia. Agende consulta con el Dr. Daniel Guerra.",
@@ -195,7 +195,7 @@ export const symptoms: Symptom[] = [
     ],
     whyConsult: "Si padece tos seca persistente por meses que no cede con tratamientos respiratorios, o si tose frecuentemente mientras come o bebe agua, requiere descartar una causa anatómica digestiva o tiroidea.",
     relatedConditions: ["Reflujo Gastroesofágico y Hernia Hiatal", "Disfagia", "Bocio Tiroideo", "Nódulo Tiroideo"],
-    image: "/images/symptoms/tos.jpg",
+    image: "/sintomas/tos.png",
     seo: {
       title: "Tos Crónica por Reflujo y Atragantamiento al Comer CDMX",
       description: "Tos recurrente de origen digestivo o tiroideo. Descarte reflujo severo o bocio con el Dr. Daniel Guerra de Coss.",
@@ -215,7 +215,7 @@ export const symptoms: Symptom[] = [
     ],
     whyConsult: "Perder más del 5% del peso corporal en menos de 6 meses de forma involuntaria (sin hacer dieta) es un signo de alarma médica que amerita estudios de diagnóstico urgentes.",
     relatedConditions: ["Disfagia", "Pancreatitis", "Nódulo Tiroideo", "Bocio Tiroideo"],
-    image: "/images/symptoms/perdida-peso.jpg",
+    image: "/sintomas/perdida-peso.png",
     seo: {
       title: "Pérdida de Peso Involuntaria y Descarte Quirúrgico CDMX",
       description: "La pérdida de peso rápida sin causa aparente requiere descartar tumores o acalasia. Dr. Daniel Guerra de Coss.",
@@ -235,7 +235,7 @@ export const symptoms: Symptom[] = [
     ],
     whyConsult: "Siempre que detecte sangrado rectal debe acudir a consulta. Si el sangrado es abundante, de color oscuro, se mezcla con las heces, o viene acompañado de fiebre y debilidad física extrema, acuda a urgencias.",
     relatedConditions: ["Enfermedades del Ano y Recto", "Abdomen Agudo"],
-    image: "/images/symptoms/sangrado.jpg",
+    image: "/sintomas/sangrado.png",
     seo: {
       title: "Sangrado Rectal al Evacuar y Patología Hemorroidal CDMX",
       description: "Diagnóstico preciso de sangrado rectal. Trate hemorroides y fisuras sin dolor con el Dr. Daniel Guerra de Coss.",
