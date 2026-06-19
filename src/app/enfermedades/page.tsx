@@ -2,6 +2,7 @@ import Link from "next/link";
 import { diseases } from "@/data/diseases";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { FadeUp, StaggerContainer, StaggerItem } from "@/components/Animations";
+import Image from "next/image";
 
 export const metadata = {
   title: "Padecimientos y Enfermedades | Dr. Daniel Guerra de Coss",
@@ -24,10 +25,12 @@ export default function EnfermedadesPage() {
             <StaggerItem key={disease.id} className="h-full">
               <Link href={`/enfermedades/${disease.slug}`} className="bg-white rounded-[2rem] overflow-hidden shadow-sm border border-slate-100 hover:shadow-2xl hover:-translate-y-3 hover:border-primary/30 transition-all duration-300 flex flex-col h-full group">
                 <div className="aspect-video relative overflow-hidden bg-slate-200">
-                  <img 
+                  <Image 
                     src={disease.image} 
                     alt={disease.name} 
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                 </div>
                 <div className="p-8 flex flex-col flex-grow">

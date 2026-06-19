@@ -23,6 +23,7 @@ import {
 } from "react-icons/fa";
 import StructuredData from "@/components/StructuredData";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 export default function Home() {
@@ -141,15 +142,22 @@ export default function Home() {
             >
               <div className="w-full h-full relative overflow-hidden rounded-[3rem] border-4 border-white shadow-2xl group bg-slate-100">
                 {heroImages.map((src, index) => (
-                  <motion.img
+                  <motion.div
                     key={src}
-                    src={src}
-                    alt={`Dr. Daniel Guerra de Coss`}
-                    className="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-700"
+                    className="absolute inset-0 w-full h-full"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: index === currentHeroIndex ? 1 : 0 }}
                     transition={{ duration: 1.0, ease: "easeInOut" }}
-                  />
+                  >
+                    <Image
+                      src={src}
+                      alt="Dr. Daniel Guerra de Coss"
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 42vw"
+                      priority={index === 0}
+                      className="object-cover object-top group-hover:scale-110 transition-transform duration-700"
+                    />
+                  </motion.div>
                 ))}
 
                 {/* Carousel Indicators */}
@@ -194,10 +202,12 @@ export default function Home() {
             <motion.div className="lg:w-2/5 flex flex-col gap-8" variants={fadeUp}>
               {/* Doctor's Photo in About Me */}
               <div className="w-full h-[400px] relative overflow-hidden rounded-[2.5rem] border-4 border-white shadow-xl bg-slate-100 group">
-                <img
+                <Image
                   src="/doctor-aboutme.jpg"
-                  alt={`Dr. Daniel Guerra de Coss en consulta`}
-                  className="w-full h-full object-cover object-top group-hover:scale-102 transition-transform duration-700"
+                  alt="Dr. Daniel Guerra de Coss en consulta"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 400px"
+                  className="object-cover group-hover:scale-102 transition-transform duration-700"
                 />
               </div>
 
@@ -331,10 +341,12 @@ export default function Home() {
               <motion.div key={disease.id} variants={fadeUp} className="h-full">
                 <Link href={`/enfermedades/${disease.slug}`} className="bg-slate-50/50 border border-slate-200 hover:border-accent/40 overflow-hidden flex flex-col justify-between h-full group hover:shadow-md hover:bg-white transition-all duration-300 rounded-3xl">
                   <div className="aspect-[16/10] relative overflow-hidden bg-slate-100">
-                    <img
+                    <Image
                       src={disease.image}
                       alt={disease.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                     <div className="absolute top-4 left-4">
                       <span className="inline-block px-3 py-1 bg-white/90 backdrop-blur-sm text-accent font-bold text-[9px] uppercase tracking-wider shadow-sm rounded-full">
@@ -387,10 +399,12 @@ export default function Home() {
               <motion.div key={service.id} variants={fadeUp} className="h-full">
                 <Link href={`/servicios/${service.slug}`} className="bg-white border border-slate-200 hover:border-accent/30 flex flex-col sm:flex-row h-full group hover:shadow-lg transition-all duration-300 rounded-3xl overflow-hidden">
                   <div className="sm:w-5/12 aspect-[16/10] sm:aspect-auto relative overflow-hidden bg-slate-100 min-h-[200px]">
-                    <img
+                    <Image
                       src={service.image}
                       alt={service.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      fill
+                      sizes="(max-width: 640px) 100vw, 40vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                     <div className="absolute top-4 left-4">
                       <span className="inline-block px-3 py-1 bg-white/90 backdrop-blur-sm text-primary font-bold text-[9px] uppercase tracking-wider shadow-sm rounded-full">
@@ -439,10 +453,12 @@ export default function Home() {
               <motion.div key={sym.id} variants={fadeUp} className="h-full">
                 <Link href={`/sintomas/${sym.slug}`} className="bg-slate-50/50 border border-slate-200 hover:border-accent/40 overflow-hidden flex flex-col justify-between h-full group transition-all duration-300 rounded-2xl">
                   <div className="aspect-[4/3] relative overflow-hidden bg-slate-100">
-                    <img
+                    <Image
                       src={sym.image}
                       alt={sym.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                     <div className="absolute top-3 left-3">
                       <span className="inline-block px-2.5 py-0.5 bg-white/90 backdrop-blur-sm text-accent font-bold text-[8px] uppercase tracking-wider shadow-sm rounded-full">
@@ -602,10 +618,12 @@ export default function Home() {
                 onClick={() => setActivePhotoIndex(index)}
               >
                 <div className="relative w-full h-full overflow-hidden">
-                  <img
+                  <Image
                     src={photo}
                     alt={`Dr. Daniel Guerra - Foto ${index + 1}`}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 25vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                     <span className="bg-white/90 backdrop-blur-sm text-primary text-[10px] font-bold uppercase tracking-widest px-4 py-2 shadow-md">
@@ -650,10 +668,13 @@ export default function Home() {
             className="relative max-w-[90vw] max-h-[80vh] flex items-center justify-center"
             onClick={(e) => e.stopPropagation()}
           >
-            <img
+            <Image
               src={doctorPhotos[activePhotoIndex]}
               alt="Dr. Daniel Guerra - Vista Previa"
-              className="max-w-full max-h-[80vh] object-contain shadow-2xl rounded-2xl border border-white/10"
+              width={1600}
+              height={1200}
+              priority
+              className="max-w-full max-h-[80vh] w-auto h-auto object-contain shadow-2xl rounded-2xl border border-white/10"
             />
             <div className="absolute bottom-[-40px] left-0 right-0 text-center text-white/60 text-[11px] font-bold tracking-widest uppercase">
               Foto {activePhotoIndex + 1} de {doctorPhotos.length}

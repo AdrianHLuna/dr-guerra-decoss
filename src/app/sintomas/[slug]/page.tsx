@@ -5,6 +5,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import StructuredData from "@/components/StructuredData";
 import { FaExclamationTriangle, FaCalendarCheck } from "react-icons/fa";
 import { FadeUp, StaggerContainer, StaggerItem } from "@/components/Animations";
+import Image from "next/image";
 
 export async function generateStaticParams() {
   return symptoms.map((s) => ({ slug: s.slug }));
@@ -50,10 +51,13 @@ export default async function SymptomPage({ params }: { params: Promise<{ slug: 
             <p className="text-lg text-slate-300 relative z-10 leading-relaxed">{symptom.description}</p>
           </div>
           <div className="lg:w-1/2 min-h-[300px] bg-slate-200 rounded-[3rem] border-4 border-white shadow-xl relative overflow-hidden group">
-            <img 
+            <Image 
               src={symptom.image} 
               alt={symptom.name} 
-              className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              priority
+              className="object-cover group-hover:scale-105 transition-transform duration-700"
             />
           </div>
         </FadeUp>

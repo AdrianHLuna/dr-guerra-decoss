@@ -2,6 +2,7 @@ import Link from "next/link";
 import { services } from "@/data/services";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { FadeUp, StaggerContainer, StaggerItem } from "@/components/Animations";
+import Image from "next/image";
 
 export const metadata = {
   title: "Procedimientos y Cirugías | Dr. Daniel Guerra de Coss",
@@ -24,10 +25,12 @@ export default function ServiciosPage() {
             <StaggerItem key={service.id} className="h-full">
               <Link href={`/servicios/${service.slug}`} className="bg-white rounded-[2rem] overflow-hidden shadow-sm border border-slate-100 hover:shadow-2xl hover:-translate-y-3 hover:border-primary/30 transition-all duration-300 flex flex-col sm:flex-row h-full group">
                 <div className="sm:w-2/5 aspect-square sm:aspect-auto relative overflow-hidden bg-slate-200">
-                  <img 
+                  <Image 
                     src={service.image} 
                     alt={service.name} 
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    fill
+                    sizes="(max-width: 640px) 100vw, 30vw"
+                    className="object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                 </div>
                 <div className="sm:w-3/5 p-8 flex flex-col justify-center flex-grow">

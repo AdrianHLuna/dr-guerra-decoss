@@ -2,6 +2,7 @@ import Link from "next/link";
 import { symptoms } from "@/data/symptoms";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { FadeUp, StaggerContainer, StaggerItem } from "@/components/Animations";
+import Image from "next/image";
 
 export const metadata = {
   title: "Síntomas de Alarma Gastrointestinal | Dr. Daniel Guerra de Coss",
@@ -24,10 +25,12 @@ export default function SintomasPage() {
             <StaggerItem key={sym.id} className="h-full">
               <Link href={`/sintomas/${sym.slug}`} className="bg-white rounded-[2rem] overflow-hidden border border-slate-100 hover:border-accent/40 hover:shadow-2xl hover:-translate-y-3 hover:shadow-primary/10 transition-all duration-300 flex flex-col h-full group">
                 <div className="aspect-[4/3] relative overflow-hidden bg-slate-200">
-                  <img 
+                  <Image 
                     src={sym.image} 
                     alt={sym.name} 
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                 </div>
                 <div className="p-8 flex flex-col flex-grow">

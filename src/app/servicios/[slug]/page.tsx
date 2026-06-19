@@ -5,6 +5,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import StructuredData from "@/components/StructuredData";
 import { FaCheckCircle, FaInfoCircle, FaCalendarCheck } from "react-icons/fa";
 import { FadeUp, StaggerContainer, StaggerItem } from "@/components/Animations";
+import Image from "next/image";
 
 export async function generateStaticParams() {
   return services.map((s) => ({ slug: s.slug }));
@@ -61,10 +62,13 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             <p className="text-lg text-white/90 relative z-10 leading-relaxed">{service.longDescription}</p>
           </div>
           <div className="lg:w-1/2 min-h-[300px] bg-slate-200 rounded-[3rem] border-4 border-white shadow-xl relative overflow-hidden group">
-            <img 
+            <Image 
               src={service.image} 
               alt={service.name} 
-              className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              priority
+              className="object-cover group-hover:scale-105 transition-transform duration-700"
             />
           </div>
         </FadeUp>
