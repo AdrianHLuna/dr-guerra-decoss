@@ -272,55 +272,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. TESTIMONIALS / BEFORE & AFTER (Manga Gástrica Cases) */}
-      <section className="py-24 bg-slate-50 border-b border-border">
-        <div className="container mx-auto px-6">
-          <motion.div className="text-center mb-16" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
-            <span className="text-[10px] font-bold text-accent uppercase tracking-widest mb-3 block">Casos de Éxito</span>
-            <h2 className="text-4xl font-serif text-primary mb-4 font-bold">Resultados Reales de Pacientes</h2>
-            <p className="text-stone-600 max-w-2xl mx-auto font-light text-sm">
-              Conozca el cambio de salud y estilo de vida tras someterse al procedimiento de Manga Gástrica.
-            </p>
-          </motion.div>
 
-          <div className="max-w-4xl mx-auto bg-white rounded-3xl border border-slate-200 p-8 lg:p-12 shadow-md">
-            <div className="flex flex-col md:flex-row gap-12 items-center">
-
-              {/* Before and After Visuals */}
-              <div className="w-full md:w-1/2 flex gap-4">
-                <div className="w-1/2 bg-slate-100 border border-slate-200 p-6 text-center rounded-2xl">
-                  <span className="text-[10px] uppercase font-bold text-stone-400 block mb-2">Antes de la Cirugía</span>
-                  <div className="h-40 bg-slate-200 rounded-lg flex items-center justify-center text-slate-400 font-bold mb-4">
-                    <span>115 kg</span>
-                  </div>
-                  <p className="text-[11px] text-stone-500 font-light">IMC: 38.4 <br /> (Obesidad Grado II)</p>
-                </div>
-                <div className="w-1/2 bg-primary/5 border border-primary/20 p-6 text-center rounded-2xl">
-                  <span className="text-[10px] uppercase font-bold text-primary block mb-2">Después (12 meses)</span>
-                  <div className="h-40 bg-primary/10 rounded-lg flex items-center justify-center text-primary font-bold mb-4">
-                    <span>72 kg</span>
-                  </div>
-                  <p className="text-[11px] text-primary font-bold">IMC: 24.1 <br /> (Peso Saludable)</p>
-                </div>
-              </div>
-
-              {/* Case Details */}
-              <div className="w-full md:w-1/2 flex flex-col justify-center">
-                <span className="inline-block self-start px-3 py-1 bg-emerald-500/10 text-emerald-600 text-[10px] uppercase font-bold tracking-wider mb-4">Remisión Metabólica</span>
-                <h3 className="text-2xl font-bold text-primary font-serif mb-4">Cambio de Vida Radical</h3>
-                <p className="text-stone-600 font-light text-sm leading-relaxed mb-6">
-                  \"Después de años de padecer presión alta y dolor severo en las rodillas que limitaba mi movilidad, decidí operarme de manga gástrica con el Dr. Daniel Guerra. A un año del procedimiento, he perdido 43 kg, he dejado de tomar medicamentos para la presión y he recuperado por completo mi energía.\"
-                </p>
-                <div className="border-t border-slate-100 pt-4 text-xs font-light text-slate-400">
-                  <p className="font-bold text-primary">Rommel G. (Paciente de Manga Gástrica)</p>
-                  <p className="italic mt-1">* Paciente real. Los resultados individuales pueden variar en cada caso.</p>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* 4. DISEASES SECTION */}
       <section className="py-24 bg-white">
