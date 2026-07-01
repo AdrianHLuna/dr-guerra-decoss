@@ -364,7 +364,7 @@ export const diseases: MedicalCondition[] = [
     image: "/enfermedades/nodulo-tiroideo.png",
     seo: {
       title: "Diagnóstico y Cirugía de Nódulo Tiroideo en CDMX",
-      description: "Valoración experta de nódulos tiroideos. Biopsia y cirugía de tiroides con el cirujano general Dr. Daniel Guerra de Coss.",
+      description: "Valoración experta de nódulos tiroideos. Biopsia y cirugía de tiroides con el cirujano laparoscopista avanzado Dr. Daniel Guerra de Coss.",
       keywords: ["nodulo tiroideo benigno", "biopsia de tiroides cdmx", "cancer de tiroides cirugia", "operacion de nodulo tiroideo"]
     }
   },
@@ -471,7 +471,7 @@ export const diseases: MedicalCondition[] = [
     faqs: [
       {
         question: "¿Qué debo hacer si siento que la comida se me atora en el pecho?",
-        answer: "Debe programar una valoración médica de inmediato con un especialista en tracto digestivo superior. El Dr. Daniel Guerra de Coss solicitará estudios como una endoscopia o una serie esofagogástrica para visualizar el interior del esófago."
+        answer: "Debe programar una valoración médica de inmediato con un especialista en cirugía digestiva. El Dr. Daniel Guerra de Coss solicitará estudios como una endoscopia o una serie esofagogástrica para visualizar el interior del esófago."
       },
       {
         question: "¿Qué es la acalasia y cómo se cura?",
@@ -516,7 +516,7 @@ export const diseases: MedicalCondition[] = [
       "Práctica de sexo anal sin lubricación o cuidados adecuados",
       "Historial de estreñimiento crónico o diarreas frecuentes"
     ],
-    mexicoStats: "La patología hemorroidal y las fisuras anales representan uno de los motivos más habituales de consulta con el cirujano general en la población económicamente activa.",
+    mexicoStats: "La patología hemorroidal y las fisuras anales representan uno de los motivos más habituales de consulta con el cirujano laparoscopista avanzado en la población económicamente activa.",
     complications: [
       "Trombosis hemorroidal (dolor extremo por un coágulo en la hemorroide)",
       "Infección severa (sepsis de origen anorrectal o gangrena de Fournier)",
@@ -695,7 +695,7 @@ export const diseases: MedicalCondition[] = [
       "Tener tos crónica o estreñimiento severo",
       "Antecedentes de cirugías abdominales mayores"
     ],
-    mexicoStats: "La reparación de hernias inguinales y umbilicales es de los procedimientos más comunes en la práctica diaria de la cirugía general en México.",
+    mexicoStats: "La reparación de hernias inguinales y umbilicales es de los procedimientos más comunes en la práctica diaria de la cirugía laparoscópica avanzada en México.",
     complications: [
       "Encarcelamiento (el tejido queda atrapado en el defecto muscular sin poder regresar)",
       "Estrangulamiento (pérdida de flujo sanguíneo en el tejido atrapado, que puede causar necrosis intestinal en pocas horas)",

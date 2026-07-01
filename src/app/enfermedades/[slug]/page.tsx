@@ -71,7 +71,7 @@ export default async function DiseasePage({ params }: { params: Promise<{ slug: 
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
               priority
-              className="object-cover group-hover:scale-105 transition-transform duration-700"
+              className="object-cover"
             />
           </div>
         </FadeUp>
@@ -84,8 +84,8 @@ export default async function DiseasePage({ params }: { params: Promise<{ slug: 
               <h2 className="text-3xl font-black text-slate-900 mb-6 flex items-center gap-3"><FaExclamationTriangle className="text-accent" /> Síntomas y Signos</h2>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {disease.symptoms.map(sym => (
-                  <li key={sym} className="bg-white p-4 rounded-xl border border-slate-100 flex items-start gap-3 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all group">
-                    <div className="w-2 h-2 rounded-full bg-accent mt-2 flex-shrink-0 group-hover:scale-150 transition-transform" />
+                  <li key={sym} className="bg-white p-4 rounded-xl border border-slate-100 flex items-start gap-3 shadow-sm">
+                    <div className="w-2 h-2 rounded-full bg-accent mt-2 flex-shrink-0" />
                     <span className="font-medium text-slate-700">{sym}</span>
                   </li>
                 ))}
@@ -98,13 +98,13 @@ export default async function DiseasePage({ params }: { params: Promise<{ slug: 
                 <div className="mb-6">
                   <h3 className="text-xl font-bold mb-3 text-slate-800">Causas Principales</h3>
                   <ul className="list-disc list-inside text-slate-600 space-y-2">
-                    {disease.causes.map(cause => <li key={cause} className="hover:text-slate-900 transition-colors">{cause}</li>)}
+                    {disease.causes.map(cause => <li key={cause}>{cause}</li>)}
                   </ul>
                 </div>
                 <div>
                   <h3 className="text-xl font-bold mb-3 text-slate-800">Factores de Riesgo</h3>
                   <ul className="list-disc list-inside text-slate-600 space-y-2">
-                    {disease.riskFactors.map(factor => <li key={factor} className="hover:text-slate-900 transition-colors">{factor}</li>)}
+                    {disease.riskFactors.map(factor => <li key={factor}>{factor}</li>)}
                   </ul>
                 </div>
               </div>
@@ -114,7 +114,7 @@ export default async function DiseasePage({ params }: { params: Promise<{ slug: 
               <h2 className="text-3xl font-black text-slate-900 mb-6 flex items-center gap-3"><FaCheckCircle className="text-green-500" /> Opciones de Tratamiento</h2>
               <div className="flex flex-wrap gap-3">
                 {disease.treatments.map(treatment => (
-                  <span key={treatment} className="bg-green-50 text-green-700 px-5 py-2.5 rounded-full font-bold text-sm border border-green-100 hover:bg-green-100 hover:scale-105 transition-all cursor-default">
+                  <span key={treatment} className="bg-green-50 text-green-700 px-5 py-2.5 rounded-full font-bold text-sm border border-green-100 cursor-default">
                     {treatment}
                   </span>
                 ))}
@@ -126,7 +126,7 @@ export default async function DiseasePage({ params }: { params: Promise<{ slug: 
               <h2 className="text-3xl font-black text-slate-900 mb-6">Preguntas Frecuentes</h2>
               <div className="space-y-4">
                 {disease.faqs.map((faq, index) => (
-                  <div key={index} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                  <div key={index} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
                     <h3 className="font-bold text-lg text-slate-900 mb-2">{faq.question}</h3>
                     <p className="text-slate-600">{faq.answer}</p>
                   </div>
@@ -137,10 +137,10 @@ export default async function DiseasePage({ params }: { params: Promise<{ slug: 
 
           {/* Sidebar CTA */}
           <FadeUp delay={0.2} className="lg:col-span-1">
-            <div className="sticky top-32 bg-primary rounded-3xl p-8 text-white shadow-xl hover:shadow-2xl transition-shadow group">
+            <div className="sticky top-32 bg-primary rounded-3xl p-8 text-white shadow-xl group">
               <h3 className="text-2xl font-black mb-4">¿Presentas síntomas o sospecha de {disease.name}?</h3>
               <p className="text-white/80 mb-8 font-light">El diagnóstico oportuno previene complicaciones de salud. El {doctor.title} {doctor.name} es cirujano especialista con amplia trayectoria.</p>
-              <a href={`https://wa.me/${doctor.whatsapp.replace(/\D/g, "")}`} target="_blank" rel="noreferrer" className="block w-full text-center bg-white text-primary font-black py-4 rounded-xl hover:scale-105 hover:bg-slate-50 transition-all shadow-lg text-xs uppercase tracking-wider font-bold">
+              <a href={`https://wa.me/${doctor.whatsapp.replace(/\D/g, "")}`} target="_blank" rel="noreferrer" className="block w-full text-center bg-white text-primary font-black py-4 rounded-xl hover:bg-slate-50 transition-colors shadow-lg text-xs uppercase tracking-wider font-bold">
                 Agendar Consulta
               </a>
             </div>

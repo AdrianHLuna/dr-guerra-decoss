@@ -11,10 +11,10 @@ export const metadata: Metadata = {
   description: doctor.bio.substring(0, 150) + "...",
   keywords: [
     `Especialista en ${doctor.specialty} en ${doctor.city}`,
-    "Cirujano General CDMX",
-    "Cirujano Bariatra CDMX",
+    "Cirujano Laparoscopista Avanzado CDMX",
+    "Cirujano Bariátrico y Metabólico CDMX",
     "Manga Gástrica México",
-    "Cirugía de Tracto Digestivo Superior",
+    "Cirugía Digestiva",
     "Operación de Vesícula y Hernias"
   ],
   openGraph: {

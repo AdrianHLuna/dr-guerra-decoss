@@ -33,7 +33,7 @@ export const symptoms: Symptom[] = [
       "Episodios de pancreatitis aguda",
       "Reflujo gastroesofágico severo"
     ],
-    whyConsult: "La presencia de vómito biliar (líquido verdoso/amarillento), vómito con sangre o la incapacidad absoluta de retener líquidos durante un día son indicaciones directas para una valoración de urgencia con el cirujano general.",
+    whyConsult: "La presencia de vómito biliar (líquido verdoso/amarillento), vómito con sangre o la incapacidad absoluta de retener líquidos durante un día son indicaciones directas para una valoración de urgencia con el cirujano laparoscopista avanzado.",
     relatedConditions: ["Abdomen Agudo", "Colecistitis", "Pancreatitis", "Reflujo Gastroesofágico y Hernia Hiatal"],
     image: "/sintomas/nauseas-vomitos.png",
     seo: {
@@ -106,7 +106,7 @@ export const symptoms: Symptom[] = [
     id: "cg-sym-006",
     slug: "dificultad-para-respirar",
     name: "Dificultad para Respirar",
-    description: "La dificultad para respirar (disnea) es la sensación subjetiva de falta de aire. En el contexto de cirugía general y bariátrica, suele presentarse como una limitación física en pacientes con obesidad mórbida debido al exceso de peso sobre el tórax, o por compresión traqueal de bocios gigantes en el cuello. También puede ser signo de sepsis abdominal o shock de origen pancreático.",
+    description: "La dificultad para respirar (disnea) es la sensación subjetiva de falta de aire. En el contexto de cirugía laparoscópica avanzada y bariátrica, suele presentarse como una limitación física en pacientes con obesidad mórbida debido al exceso de peso sobre el tórax, o por compresión traqueal de bocios gigantes en el cuello. También puede ser signo de sepsis abdominal o shock de origen pancreático.",
     causes: [
       "Obesidad severa que restringe la expansión de los pulmones",
       "Compresión de la tráquea por crecimiento anormal de la tiroides (Bocio)",
@@ -126,7 +126,7 @@ export const symptoms: Symptom[] = [
     id: "cg-sym-007",
     slug: "shock-o-insuficiencia",
     name: "Shock o Insuficiencia Multiorgánica",
-    description: "El shock es un estado crítico en el cual disminuye el flujo sanguíneo hacia los órganos vitales, privándolos de oxígeno. En cirugía general, es la complicación final de infecciones abdominales descontroladas (peritonitis), pancreatitis severa necrotizante, o perforaciones intestinales que evolucionan a shock séptico, requiriendo reanimación inmediata y cirugía de urgencia.",
+    description: "El shock es un estado crítico en el cual disminuye el flujo sanguíneo hacia los órganos vitales, privándolos de oxígeno. En cirugía laparoscópica avanzada, es la complicación final de infecciones abdominales descontroladas (peritonitis), pancreatitis severa necrotizante, o perforaciones intestinales que evolucionan a shock séptico, requiriendo reanimación inmediata y cirugía de urgencia.",
     causes: [
       "Peritonitis generalizada por perforación de víscera hueca (apéndice o úlcera)",
       "Pancreatitis necrotizante severa con respuesta inflamatoria sistémica",

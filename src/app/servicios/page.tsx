@@ -17,27 +17,27 @@ export default function ServiciosPage() {
         
         <FadeUp className="mb-12">
           <h1 className="text-4xl font-black text-slate-900 mt-8 mb-4">Procedimientos Quirúrgicos</h1>
-          <p className="text-lg text-slate-600 max-w-3xl">Ofrecemos soluciones quirúrgicas avanzadas con técnicas laparoscópicas de mínima invasión para obesidad, pared abdominal y tracto digestivo superior.</p>
+          <p className="text-lg text-slate-600 max-w-3xl">Ofrecemos soluciones quirúrgicas avanzadas con técnicas laparoscópicas de mínima invasión para obesidad, pared abdominal y cirugía digestiva.</p>
         </FadeUp>
 
         <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
           {services.map(service => (
             <StaggerItem key={service.id} className="h-full">
-              <Link href={`/servicios/${service.slug}`} className="bg-white rounded-[2rem] overflow-hidden shadow-sm border border-slate-100 hover:shadow-2xl hover:-translate-y-3 hover:border-primary/30 transition-all duration-300 flex flex-col sm:flex-row h-full group">
+              <Link href={`/servicios/${service.slug}`} className="bg-white rounded-[2rem] overflow-hidden shadow-sm border border-slate-100 flex flex-col sm:flex-row h-full group">
                 <div className="sm:w-2/5 aspect-square sm:aspect-auto relative overflow-hidden bg-slate-200">
                   <Image 
                     src={service.image} 
                     alt={service.name} 
                     fill
                     sizes="(max-width: 640px) 100vw, 30vw"
-                    className="object-cover group-hover:scale-110 transition-transform duration-700"
+                    className="object-cover"
                   />
                 </div>
                 <div className="sm:w-3/5 p-8 flex flex-col justify-center flex-grow">
-                  <h2 className="text-2xl font-bold text-slate-900 mb-3 group-hover:text-primary transition-colors">{service.name}</h2>
+                  <h2 className="text-2xl font-bold text-slate-900 mb-3">{service.name}</h2>
                   <p className="text-slate-600 line-clamp-3 mb-6 flex-grow">{service.description}</p>
-                  <span className="text-primary font-black transition-colors flex items-center gap-2 uppercase text-sm tracking-wider">
-                    Saber más <span className="group-hover:translate-x-2 transition-transform duration-300">&rarr;</span>
+                  <span className="text-primary font-black flex items-center gap-2 uppercase text-sm tracking-wider">
+                    Saber más <span>&rarr;</span>
                   </span>
                 </div>
               </Link>

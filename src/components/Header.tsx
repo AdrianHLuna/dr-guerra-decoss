@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { doctor } from "@/data/doctor";
 import { useState } from "react";
 import { FaBars, FaTimes, FaWhatsapp, FaPhone } from "react-icons/fa";
@@ -29,7 +30,7 @@ export default function Header() {
           </div>
           <div className="flex items-center gap-4">
             <a href={`tel:${doctor.phone}`} className="flex items-center gap-2 text-slate-300 hover:text-white transition-all font-medium">
-              <span className="h-2 w-2 rounded-full bg-accent animate-pulse-slow"></span>
+              <span className="h-2 w-2 rounded-full bg-accent"></span>
               Urgencias 24/7: <strong className="text-white font-bold tracking-wider">{doctor.phone}</strong>
             </a>
           </div>
@@ -37,33 +38,17 @@ export default function Header() {
       </div>
       
       {/* Main Nav */}
-      <div className="container mx-auto px-6 h-20 flex items-center justify-between">
+      <div className="container mx-auto px-6 py-2 flex items-center justify-between">
         {/* Brand Logo with dynamic fallback */}
-        <Link href="/" className="flex items-center gap-3">
-          <img 
-            src="/images/Logo_Daniel Guerra PNG H.png" 
+        <Link href="/" className="flex items-center">
+          <Image 
+            src="/images/header_logo.jpg" 
             alt={`Logo ${doctor.title} ${doctor.name}`}
-            className="h-16 w-auto object-contain hidden sm:block"
-            onError={(e) => {
-              e.currentTarget.style.display = 'none';
-            }}
+            width={717}
+            height={295}
+            priority
+            className="h-20 sm:h-24 lg:h-28 w-auto object-contain"
           />
-          <img 
-            src="/images/Logo_Daniel Guerra PNG.png" 
-            alt={`Logo Icon ${doctor.title} ${doctor.name}`}
-            className="h-14 w-auto object-contain sm:hidden"
-            onError={(e) => {
-              e.currentTarget.style.display = 'none';
-            }}
-          />
-          <div className="flex flex-col justify-center">
-            <span className="text-base lg:text-lg font-bold tracking-tight text-primary leading-none">
-              {doctor.title} {doctor.name}
-            </span>
-            <span className="text-[9px] font-bold text-accent uppercase tracking-widest mt-1">
-              {doctor.specialistTitle}
-            </span>
-          </div>
         </Link>
 
         {/* Desktop Menu */}
@@ -88,7 +73,7 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="lg:hidden bg-white border-t border-border p-6 flex flex-col gap-4 text-sm uppercase tracking-widest font-bold text-primary shadow-2xl absolute w-full left-0 animate-fade-in">
+        <div className="lg:hidden bg-white border-t border-border p-6 flex flex-col gap-4 text-sm uppercase tracking-widest font-bold text-primary shadow-2xl absolute w-full left-0">
           <Link href="/" onClick={() => setIsOpen(false)} className="py-3 border-b border-stone-100">Inicio</Link>
           <Link href="/enfermedades" onClick={() => setIsOpen(false)} className="py-3 border-b border-stone-100">Enfermedades</Link>
           <Link href="/servicios" onClick={() => setIsOpen(false)} className="py-3 border-b border-stone-100">Servicios</Link>

@@ -23,21 +23,21 @@ export default function EnfermedadesPage() {
         <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {diseases.map(disease => (
             <StaggerItem key={disease.id} className="h-full">
-              <Link href={`/enfermedades/${disease.slug}`} className="bg-white rounded-[2rem] overflow-hidden shadow-sm border border-slate-100 hover:shadow-2xl hover:-translate-y-3 hover:border-primary/30 transition-all duration-300 flex flex-col h-full group">
+              <Link href={`/enfermedades/${disease.slug}`} className="bg-white rounded-[2rem] overflow-hidden shadow-sm border border-slate-100 flex flex-col h-full group">
                 <div className="aspect-video relative overflow-hidden bg-slate-200">
                   <Image 
                     src={disease.image} 
                     alt={disease.name} 
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover group-hover:scale-110 transition-transform duration-700"
+                    className="object-cover"
                   />
                 </div>
                 <div className="p-8 flex flex-col flex-grow">
-                  <h2 className="text-2xl font-bold text-slate-900 mb-3 group-hover:text-primary transition-colors">{disease.name}</h2>
+                  <h2 className="text-2xl font-bold text-slate-900 mb-3">{disease.name}</h2>
                   <p className="text-slate-600 line-clamp-3 mb-6 flex-grow">{disease.description}</p>
-                  <span className="text-accent font-black group-hover:text-primary transition-colors flex items-center gap-2 uppercase text-sm tracking-wider">
-                    Saber más <span className="group-hover:translate-x-2 transition-transform duration-300">&rarr;</span>
+                  <span className="text-accent font-black flex items-center gap-2 uppercase text-sm tracking-wider">
+                    Saber más <span>&rarr;</span>
                   </span>
                 </div>
               </Link>

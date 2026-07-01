@@ -57,7 +57,7 @@ export default async function SymptomPage({ params }: { params: Promise<{ slug: 
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
               priority
-              className="object-cover group-hover:scale-105 transition-transform duration-700"
+              className="object-cover"
             />
           </div>
         </FadeUp>
@@ -67,9 +67,9 @@ export default async function SymptomPage({ params }: { params: Promise<{ slug: 
           <StaggerContainer className="lg:col-span-2 space-y-12">
             
             <StaggerItem>
-              <div className="bg-slate-50 border border-slate-200 p-8 rounded-3xl hover:shadow-lg hover:-translate-y-1 transition-all group">
+              <div className="bg-slate-50 border border-slate-200 p-8 rounded-3xl group">
                 <h2 className="text-2xl font-black text-primary mb-4 flex items-center gap-3">
-                  <FaExclamationTriangle className="text-accent group-hover:scale-125 transition-transform" /> ¿Por qué no debes ignorarlo?
+                  <FaExclamationTriangle className="text-accent" /> ¿Por qué no debes ignorarlo?
                 </h2>
                 <p className="text-lg text-slate-800 font-medium leading-relaxed">
                   {symptom.whyConsult}
@@ -81,7 +81,7 @@ export default async function SymptomPage({ params }: { params: Promise<{ slug: 
               <h2 className="text-3xl font-black text-slate-900 mb-6">Posibles Causas</h2>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {symptom.causes.map(cause => (
-                  <li key={cause} className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm font-medium text-slate-700 hover:shadow-md hover:border-slate-300 transition-all cursor-default">
+                  <li key={cause} className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm font-medium text-slate-700 cursor-default">
                     {cause}
                   </li>
                 ))}
@@ -92,11 +92,11 @@ export default async function SymptomPage({ params }: { params: Promise<{ slug: 
 
           {/* Sidebar CTA */}
           <FadeUp delay={0.2} className="lg:col-span-1">
-            <div className="sticky top-32 bg-primary rounded-3xl p-8 text-white shadow-xl hover:shadow-2xl transition-shadow group">
+            <div className="sticky top-32 bg-primary rounded-3xl p-8 text-white shadow-xl group">
               <h3 className="text-2xl font-black mb-4">El Dr. {doctor.name} atiende este síntoma</h3>
               <p className="text-white/80 mb-8 font-light">No esperes más. Agendar una valoración oportuna con un especialista es el primer paso para tu salud y tranquilidad.</p>
-              <a href={`https://wa.me/${doctor.whatsapp.replace(/\D/g, "")}`} target="_blank" rel="noreferrer" className="block w-full flex items-center justify-center gap-3 bg-white text-primary font-black py-4 rounded-xl hover:scale-105 hover:bg-slate-50 transition-all shadow-lg text-xs uppercase tracking-wider font-bold">
-                <FaCalendarCheck className="group-hover:rotate-12 transition-transform text-accent" /> Agendar Valoración
+              <a href={`https://wa.me/${doctor.whatsapp.replace(/\D/g, "")}`} target="_blank" rel="noreferrer" className="block w-full flex items-center justify-center gap-3 bg-white text-primary font-black py-4 rounded-xl hover:bg-slate-50 transition-colors shadow-lg text-xs uppercase tracking-wider font-bold">
+                <FaCalendarCheck className="text-accent" /> Agendar Valoración
               </a>
             </div>
           </FadeUp>

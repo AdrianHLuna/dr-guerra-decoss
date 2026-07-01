@@ -319,7 +319,7 @@ export const services: MedicalService[] = [
     image: "/servicios/lipomas.png",
     seo: {
       title: "Retirar Bola de Grasa y Quistes (Cirugía Ambulatoria) CDMX",
-      description: "Extirpación rápida y estética de lipomas y quistes sebáceos con anestesia local. Cirujano General Dr. Daniel Guerra de Coss.",
+      description: "Extirpación rápida y estética de lipomas y quistes sebáceos con anestesia local. Cirujano Laparoscopista Avanzado Dr. Daniel Guerra de Coss.",
       keywords: ["reseccion de lipomas consultorio", "quiste sebaceo cirugia ambulatoria", "eliminar bola de grasa precio cdmx", "cirujano de piel cdmx"]
     }
   },
@@ -355,14 +355,14 @@ export const services: MedicalService[] = [
     image: "/servicios/colecistectomia.png",
     seo: {
       title: "Colecistectomía Laparoscópica (Cirugía de Vesícula) CDMX",
-      description: "Cirugía de vesícula biliar de mínima invasión. Evite cólicos y complicaciones. Dr. Daniel Guerra de Coss, Cirujano General.",
+      description: "Cirugía de vesícula biliar de mínima invasión. Evite cólicos y complicaciones. Dr. Daniel Guerra de Coss, Cirujano Laparoscopista Avanzado.",
       keywords: ["colecistectomia laparoscopica precio cdmx", "operacion de vesicula costo", "piedras en la vesicula cirugia", "cirujano de vesicula cdmx"]
     }
   },
   {
     id: "cg-ser-011",
     slug: "consulta-cirugia-general-bariatrica",
-    name: "Consulta de Cirugía General y Bariátrica",
+    name: "Consulta de Cirugía Laparoscópica Avanzada, Bariátrica y Metabólica",
     description: "Valoración médica especializada integral para padecimientos del aparato digestivo, hernias y candidatos a manga gástrica.",
     longDescription: "La consulta de especialidad con el Dr. Daniel Guerra de Coss consiste en una valoración médica exhaustiva y personalizada. Incluye la elaboración de una historia clínica detallada, revisión minuciosa de estudios previos de laboratorio y gabinete (como ultrasonidos o endoscopias), exploración física dirigida del abdomen o cuello, y el establecimiento de un diagnóstico preciso con propuestas de tratamiento quirúrgico o médico. Es el punto de inicio clave para pacientes con dolor abdominal recurrente, hernias palpables, problemas de tiroides o aquellos interesados en iniciar un protocolo para cirugía de manga gástrica.",
     type: "consultorio",
@@ -384,9 +384,9 @@ export const services: MedicalService[] = [
     relatedConditions: ["obesidad-y-sobrepeso", "abdomen-agudo", "reflujo-gastroesofagico-hernia-hiatal", "hernia-inguinal-pared-abdominal"],
     image: "/servicios/consulta.png",
     seo: {
-      title: "Consulta con Cirujano General y Bariatra en CDMX | Dr. Guerra",
+      title: "Consulta con Cirujano Laparoscopista Avanzado, Bariátrico y Metabólico en CDMX | Dr. Guerra",
       description: "Valoración de cirugía de vesícula, hernias, reflujo y manga gástrica. Precio de consulta $1,200 MXN. CDMX y Chiapas.",
-      keywords: ["consulta cirujano general cdmx", "cirujano bariatra df", "consulta de cirugia precio", "torre medica tuxpan cirujano"]
+      keywords: ["consulta cirujano laparoscopista cdmx", "cirujano bariatra df", "consulta de cirugia precio", "torre medica tuxpan cirujano"]
     }
   }
 ];

@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export const metadata = {
   title: "Síntomas de Alarma Gastrointestinal | Dr. Daniel Guerra de Coss",
-  description: "Identifica los síntomas digestivos y de pared abdominal que requieren valoración por el cirujano general Dr. Daniel Guerra de Coss.",
+  description: "Identifica los síntomas digestivos y de pared abdominal que requieren valoración por el cirujano laparoscopista avanzado Dr. Daniel Guerra de Coss.",
 };
 
 export default function SintomasPage() {
@@ -23,21 +23,21 @@ export default function SintomasPage() {
         <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {symptoms.map(sym => (
             <StaggerItem key={sym.id} className="h-full">
-              <Link href={`/sintomas/${sym.slug}`} className="bg-white rounded-[2rem] overflow-hidden border border-slate-100 hover:border-accent/40 hover:shadow-2xl hover:-translate-y-3 hover:shadow-primary/10 transition-all duration-300 flex flex-col h-full group">
+              <Link href={`/sintomas/${sym.slug}`} className="bg-white rounded-[2rem] overflow-hidden border border-slate-100 flex flex-col h-full group">
                 <div className="aspect-[4/3] relative overflow-hidden bg-slate-200">
                   <Image 
                     src={sym.image} 
                     alt={sym.name} 
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover group-hover:scale-110 transition-transform duration-700"
+                    className="object-cover"
                   />
                 </div>
                 <div className="p-8 flex flex-col flex-grow">
-                  <h2 className="text-2xl font-bold text-slate-900 mb-3 group-hover:text-primary transition-colors">{sym.name}</h2>
+                  <h2 className="text-2xl font-bold text-slate-900 mb-3">{sym.name}</h2>
                   <p className="text-slate-500 line-clamp-3 mb-6 flex-grow">{sym.description}</p>
                   <span className="text-accent font-black flex items-center gap-2 uppercase text-sm tracking-wider">
-                    Saber más <span className="group-hover:translate-x-2 transition-transform duration-300">&rarr;</span>
+                    Saber más <span>&rarr;</span>
                   </span>
                 </div>
               </Link>

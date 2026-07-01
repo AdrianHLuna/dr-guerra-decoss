@@ -3,11 +3,11 @@ import { DoctorProfile } from "@/types/schema";
 export const doctor: DoctorProfile = {
   name: "Daniel Guerra de Coss",
   title: "Dr.",
-  specialty: "Cirugía General",
-  specialistTitle: "Cirujano General y Bariatra",
-  subspecialty: "Alta Especialidad en Cirugía de Tracto Digestivo Superior",
+  specialty: "Cirugía Laparoscópica Avanzada",
+  specialistTitle: "Cirujano Laparoscopista Avanzado, Bariátrico y Metabólico",
+  subspecialty: "Cirugía Digestiva y Cirugía Bariátrica y Metabólica",
   cedula: "11938343", // Médico Cirujano - UAG
-  cedulaEspecialidad: "14368935", // Especialidad en Cirugía General - UNAM
+  cedulaEspecialidad: "14368935", // Especialidad en Cirugía Laparoscópica Avanzada - UNAM
   cofepris: undefined, // Omitido según instrucciones del usuario (sin COFEPRIS ficticio)
   phone: "5649246308",
   whatsapp: "5649246308",
@@ -22,13 +22,13 @@ export const doctor: DoctorProfile = {
   insurances: [], // Omitido/pendiente según instrucciones
   schedule: "Lunes a viernes de 16:00 a 21:00. Sábados de 9:00 a 17:00",
   photo: "/images/doctor.png",
-  bio: "El Dr. Daniel Guerra de Coss es un destacado Cirujano General con Alta Especialidad en Cirugía del Tracto Digestivo Superior y una sólida formación en Cirugía Bariátrica. Egresado de la Universidad Autónoma de Guadalajara (UAG) y especializado por la Universidad Nacional Autónoma de México (UNAM), el Dr. Guerra de Coss cuenta con más de 15 años de trayectoria profesional. Ha brindado atención médica a más de 18,000 pacientes y realizado con éxito más de 2,000 cirugías gastrointestinales y metabólicas, consolidándose como un referente en el tratamiento quirúrgico de la obesidad y de patologías complejas del sistema digestivo.",
-  philosophy: "Cirugía general y bariátrica de alta precisión, enfocada en la seguridad del paciente y en un abordaje mínimamente invasivo para una pronta recuperación.",
+  bio: "El Dr. Daniel Guerra de Coss es un destacado Cirujano Laparoscopista Avanzado con Alta Especialidad en Cirugía Digestiva y Subespecialidad en Cirugía Bariátrica y Metabólica. Egresado de la Universidad Autónoma de Guadalajara (UAG) y especializado por la Universidad Nacional Autónoma de México (UNAM), el Dr. Guerra de Coss cuenta con más de 15 años de trayectoria profesional. Ha brindado atención médica a más de 18,000 pacientes y realizado con éxito más de 2,000 cirugías gastrointestinales y metabólicas, consolidándose como un referente en el tratamiento quirúrgico de la obesidad y de patologías complejas del sistema digestivo.",
+  philosophy: "Cirugía laparoscópica avanzada, bariátrica y metabólica de alta precisión, enfocada en la seguridad del paciente y en un abordaje mínimamente invasivo para una pronta recuperación.",
   experience: [
     {
       year: "Trayectoria Profesional",
-      title: "Cirujano General y Especialista en Tracto Digestivo",
-      description: "Más de 15 años de experiencia clínica atendiendo patologías del aparato digestivo y pared abdominal con abordaje laparoscópico avanzado.",
+      title: "Cirujano Laparoscopista Avanzado y Especialista en Cirugía Digestiva y Bariátrica",
+      description: "Más de 15 años de experiencia clínica atendiendo patologías del aparato digestivo, pared abdominal y obesidad con abordaje laparoscópico avanzado.",
     },
     {
       year: "Volumen Quirúrgico",
@@ -47,11 +47,11 @@ export const doctor: DoctorProfile = {
       institution: "Universidad Autónoma de Guadalajara (UAG) - Céd. 11938343",
     },
     {
-      name: "Cédula de Especialidad en Cirugía General",
+      name: "Cédula de Especialidad en Cirugía Laparoscópica Avanzada",
       institution: "Universidad Nacional Autónoma de México (UNAM) - Céd. 14368935",
     },
     {
-      name: "Cédula de Alta Especialidad en Cirugía de Tracto Digestivo Superior",
+      name: "Cédula de Alta Especialidad en Cirugía Digestiva",
       institution: "Cédula Reg. C24014424",
     }
   ],
@@ -62,12 +62,12 @@ export const doctor: DoctorProfile = {
       year: "Egreso",
     },
     {
-      degree: "Especialidad en Cirugía General",
+      degree: "Especialidad en Cirugía Laparoscópica Avanzada",
       institution: "Universidad Nacional Autónoma de México (UNAM)",
       year: "Egreso",
     },
     {
-      degree: "Alta Especialidad en Cirugía de Tracto Digestivo Superior",
+      degree: "Alta Especialidad en Cirugía Digestiva",
       institution: "Universidad Nacional Autónoma de México (UNAM)",
       year: "Egreso",
     }

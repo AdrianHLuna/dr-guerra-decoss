@@ -26,9 +26,9 @@ export default function ContactoPage() {
         {/* 3 Offices Grid */}
         <StaggerContainer className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mb-16">
           {offices.map((office, idx) => (
-            <StaggerItem key={office.id} className="bg-white rounded-3xl border border-slate-200 shadow-sm p-8 hover:shadow-xl hover:border-accent/40 transition-all duration-350 flex flex-col justify-between group">
+            <StaggerItem key={office.id} className="bg-white rounded-3xl border border-slate-200 shadow-sm p-8 flex flex-col justify-between group">
               <div>
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary mb-6 group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary mb-6">
                   <FaMapMarkerAlt size={20} />
                 </div>
                 <h3 className="text-xl font-bold text-primary mb-4 font-serif">{office.name}</h3>
@@ -42,7 +42,7 @@ export default function ContactoPage() {
                   href={office.googleMapsUrl} 
                   target="_blank" 
                   rel="noreferrer" 
-                  className="w-full text-center py-3 bg-slate-50 hover:bg-primary hover:text-white text-primary text-xs uppercase tracking-widest font-bold border border-slate-200 group-hover:border-primary transition-all duration-300"
+                  className="w-full text-center py-3 bg-slate-50 hover:bg-primary hover:text-white text-primary text-xs uppercase tracking-widest font-bold border border-slate-200 transition-all duration-300"
                 >
                   Ver en Google Maps &rarr;
                 </a>
@@ -52,7 +52,7 @@ export default function ContactoPage() {
         </StaggerContainer>
 
         {/* General Contact Info & Schedules Card */}
-        <FadeUp delay={0.3} className="bg-white rounded-3xl border border-slate-200 shadow-md max-w-4xl mx-auto p-10 lg:p-14 hover:shadow-lg transition-shadow duration-300">
+        <FadeUp delay={0.3} className="bg-white rounded-3xl border border-slate-200 shadow-md max-w-4xl mx-auto p-10 lg:p-14">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
               <h3 className="text-2xl font-bold text-primary mb-6 font-serif">Horarios y Atención</h3>
@@ -78,9 +78,9 @@ export default function ContactoPage() {
               <div className="flex flex-col gap-4">
                 <a 
                   href={`tel:${doctor.phone}`} 
-                  className="flex items-center gap-4 bg-slate-50 border border-slate-200 hover:border-accent/40 p-4 rounded-xl hover:shadow-sm transition-all group"
+                  className="flex items-center gap-4 bg-slate-50 border border-slate-200 p-4 rounded-xl group"
                 >
-                  <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center text-accent group-hover:scale-110 transition-transform">
+                  <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center text-accent">
                     <FaPhone />
                   </div>
                   <div>
@@ -93,9 +93,9 @@ export default function ContactoPage() {
                   href={whatsappUrl} 
                   target="_blank" 
                   rel="noreferrer" 
-                  className="flex items-center gap-4 bg-slate-50 border border-slate-200 hover:border-accent/40 p-4 rounded-xl hover:shadow-sm transition-all group"
+                  className="flex items-center gap-4 bg-slate-50 border border-slate-200 p-4 rounded-xl group"
                 >
-                  <div className="w-10 h-10 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-500 group-hover:scale-110 transition-transform">
+                  <div className="w-10 h-10 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-500">
                     <FaWhatsapp className="text-lg" />
                   </div>
                   <div>

@@ -68,7 +68,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
               priority
-              className="object-cover group-hover:scale-105 transition-transform duration-700"
+              className="object-cover"
             />
           </div>
         </FadeUp>
@@ -79,7 +79,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             
             <StaggerItem>
               <h2 className="text-3xl font-black text-slate-900 mb-6 flex items-center gap-3"><FaInfoCircle className="text-accent" /> Ficha Técnica</h2>
-              <dl className="grid grid-cols-1 sm:grid-cols-2 gap-4 bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-lg transition-shadow">
+              <dl className="grid grid-cols-1 sm:grid-cols-2 gap-4 bg-white p-8 rounded-3xl border border-slate-100 shadow-sm">
                 <div className="border-b border-slate-100 pb-4">
                   <dt className="text-sm font-bold text-slate-500 uppercase">Duración</dt>
                   <dd className="text-lg font-medium text-slate-900">{service.duration || "Variable"}</dd>
@@ -113,8 +113,8 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               <h2 className="text-3xl font-black text-slate-900 mb-6 flex items-center gap-3"><FaCheckCircle className="text-green-500" /> Beneficios del Procedimiento</h2>
               <ul className="grid grid-cols-1 gap-4">
                 {service.benefits.map(benefit => (
-                  <li key={benefit} className="bg-green-50 p-4 rounded-xl border border-green-100 flex items-start gap-3 hover:shadow-md hover:-translate-y-1 transition-all group">
-                    <FaCheckCircle className="text-green-500 mt-1 flex-shrink-0 group-hover:scale-150 transition-transform" />
+                  <li key={benefit} className="bg-green-50 p-4 rounded-xl border border-green-100 flex items-start gap-3">
+                    <FaCheckCircle className="text-green-500 mt-1 flex-shrink-0" />
                     <span className="font-medium text-green-900">{benefit}</span>
                   </li>
                 ))}
@@ -123,9 +123,9 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
 
             <StaggerItem>
               <h2 className="text-3xl font-black text-slate-900 mb-6">Recomendaciones Posteriores</h2>
-              <div className="bg-slate-50 p-8 rounded-3xl border border-slate-100 hover:shadow-md transition-shadow">
+              <div className="bg-slate-50 p-8 rounded-3xl border border-slate-100">
                 <ul className="list-disc list-inside text-slate-700 space-y-3">
-                  {service.postOpRecommendations.map(rec => <li key={rec} className="hover:text-slate-900 transition-colors">{rec}</li>)}
+                  {service.postOpRecommendations.map(rec => <li key={rec}>{rec}</li>)}
                 </ul>
               </div>
             </StaggerItem>
@@ -133,11 +133,11 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
 
           {/* Sidebar CTA */}
           <FadeUp delay={0.2} className="lg:col-span-1">
-            <div className="sticky top-32 bg-primary rounded-3xl p-8 text-white shadow-xl hover:shadow-2xl transition-shadow group">
+            <div className="sticky top-32 bg-primary rounded-3xl p-8 text-white shadow-xl group">
               <h3 className="text-2xl font-black mb-4">¿Requiere este servicio?</h3>
               <p className="text-slate-300 mb-8 font-light text-sm leading-relaxed">Antes de cualquier procedimiento, el Dr. Daniel Guerra realizará una valoración médica detallada para diseñar el plan de tratamiento óptimo para ti.</p>
-              <a href={`https://wa.me/${doctor.whatsapp.replace(/\D/g, "")}`} target="_blank" rel="noreferrer" className="block w-full flex items-center justify-center gap-3 bg-white text-primary font-black py-4 rounded-xl hover:scale-105 hover:bg-slate-50 transition-all shadow-lg text-xs uppercase tracking-wider font-bold">
-                <FaCalendarCheck className="group-hover:rotate-12 transition-transform text-accent" /> Agendar Valoración
+              <a href={`https://wa.me/${doctor.whatsapp.replace(/\D/g, "")}`} target="_blank" rel="noreferrer" className="block w-full flex items-center justify-center gap-3 bg-white text-primary font-black py-4 rounded-xl hover:bg-slate-50 transition-colors shadow-lg text-xs uppercase tracking-wider font-bold">
+                <FaCalendarCheck className="text-accent" /> Agendar Valoración
               </a>
             </div>
           </FadeUp>
