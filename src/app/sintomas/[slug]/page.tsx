@@ -1,9 +1,8 @@
 import { symptoms } from "@/data/symptoms";
-import { doctor } from "@/data/doctor";
 import { notFound } from "next/navigation";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import StructuredData from "@/components/StructuredData";
-import { FaExclamationTriangle, FaCalendarCheck } from "react-icons/fa";
+import { FaExclamationTriangle } from "react-icons/fa";
 import { FadeUp, StaggerContainer, StaggerItem } from "@/components/Animations";
 import Image from "next/image";
 
@@ -62,9 +61,9 @@ export default async function SymptomPage({ params }: { params: Promise<{ slug: 
           </div>
         </FadeUp>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <div className="max-w-4xl mx-auto mt-12">
           {/* Contenido Principal */}
-          <StaggerContainer className="lg:col-span-2 space-y-12">
+          <StaggerContainer className="space-y-12">
             
             <StaggerItem>
               <div className="bg-slate-50 border border-slate-200 p-8 rounded-3xl group">
@@ -89,17 +88,6 @@ export default async function SymptomPage({ params }: { params: Promise<{ slug: 
               <p className="text-sm text-slate-500 mt-4 italic">* Estas son solo posibles causas. El diagnóstico definitivo debe realizarlo el especialista tras una valoración.</p>
             </StaggerItem>
           </StaggerContainer>
-
-          {/* Sidebar CTA */}
-          <FadeUp delay={0.2} className="lg:col-span-1">
-            <div className="sticky top-32 bg-primary rounded-3xl p-8 text-white shadow-xl group">
-              <h3 className="text-2xl font-black mb-4">El Dr. {doctor.name} atiende este síntoma</h3>
-              <p className="text-white/80 mb-8 font-light">No esperes más. Agendar una valoración oportuna con un especialista es el primer paso para tu salud y tranquilidad.</p>
-              <a href={`https://wa.me/${doctor.whatsapp.replace(/\D/g, "")}`} target="_blank" rel="noreferrer" className="block w-full flex items-center justify-center gap-3 bg-white text-primary font-black py-4 rounded-xl hover:bg-slate-50 transition-colors shadow-lg text-xs uppercase tracking-wider font-bold">
-                <FaCalendarCheck className="text-accent" /> Agendar Valoración
-              </a>
-            </div>
-          </FadeUp>
         </div>
       </div>
     </div>

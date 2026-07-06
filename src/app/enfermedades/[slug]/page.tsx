@@ -1,5 +1,4 @@
 import { diseases } from "@/data/diseases";
-import { doctor } from "@/data/doctor";
 import { notFound } from "next/navigation";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import StructuredData from "@/components/StructuredData";
@@ -76,9 +75,9 @@ export default async function DiseasePage({ params }: { params: Promise<{ slug: 
           </div>
         </FadeUp>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <div className="max-w-4xl mx-auto mt-12">
           {/* Contenido Principal */}
-          <StaggerContainer className="lg:col-span-2 space-y-12">
+          <StaggerContainer className="space-y-12">
             
             <StaggerItem>
               <h2 className="text-3xl font-black text-slate-900 mb-6 flex items-center gap-3"><FaExclamationTriangle className="text-accent" /> Síntomas y Signos</h2>
@@ -134,17 +133,6 @@ export default async function DiseasePage({ params }: { params: Promise<{ slug: 
               </div>
             </StaggerItem>
           </StaggerContainer>
-
-          {/* Sidebar CTA */}
-          <FadeUp delay={0.2} className="lg:col-span-1">
-            <div className="sticky top-32 bg-primary rounded-3xl p-8 text-white shadow-xl group">
-              <h3 className="text-2xl font-black mb-4">¿Presentas síntomas o sospecha de {disease.name}?</h3>
-              <p className="text-white/80 mb-8 font-light">El diagnóstico oportuno previene complicaciones de salud. El {doctor.title} {doctor.name} es cirujano especialista con amplia trayectoria.</p>
-              <a href={`https://wa.me/${doctor.whatsapp.replace(/\D/g, "")}`} target="_blank" rel="noreferrer" className="block w-full text-center bg-white text-primary font-black py-4 rounded-xl hover:bg-slate-50 transition-colors shadow-lg text-xs uppercase tracking-wider font-bold">
-                Agendar Consulta
-              </a>
-            </div>
-          </FadeUp>
         </div>
       </div>
     </div>

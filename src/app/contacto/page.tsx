@@ -55,13 +55,12 @@ export default function ContactoPage() {
         <FadeUp delay={0.3} className="bg-white rounded-3xl border border-slate-200 shadow-md max-w-4xl mx-auto p-10 lg:p-14">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
-              <h3 className="text-2xl font-bold text-primary mb-6 font-serif">Horarios y Atención</h3>
+              <h3 className="text-2xl font-bold text-primary mb-6 font-serif">Modalidad de Atención</h3>
               <div className="flex gap-4 items-start mb-6">
                 <FaClock className="text-accent mt-1 flex-shrink-0" />
                 <div className="text-sm">
-                  <h4 className="font-bold text-primary uppercase tracking-wider mb-1">Horarios Generales</h4>
-                  <p className="text-slate-600 font-light">Lunes a Viernes de 16:00 a 21:00 hrs.</p>
-                  <p className="text-slate-600 font-light">Sábados de 09:00 a 17:00 hrs.</p>
+                  <h4 className="font-bold text-primary uppercase tracking-wider mb-1">Disponibilidad</h4>
+                  <p className="text-slate-650 font-semibold">Toda consulta es previa cita. Favor de consultar disponibilidad.</p>
                 </div>
               </div>
               <div className="flex gap-4 items-start">

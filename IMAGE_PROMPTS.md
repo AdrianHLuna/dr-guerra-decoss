@@ -181,6 +181,201 @@ Suffixes: high-fidelity medical illustration, 8k, detailed textures, textbook qu
 Negative Prompt: plastic, CGI, 3D render, cartoon, toy, low quality 3d render, clay, video game graphic, hologram, sci-fi, futuristic, spaceship, cyberpunk, neon, glowing digital UI, hud, data rings, blueprints, user interface, text, words, letters, watermark, signature, blood.
 ```
 
+### `vesicula.png`
+**Padecimiento:** Vesícula Biliar y Colelitiasis
+**Prompt:**
+```
+Aesthetic medical illustration of a human gallbladder containing several smooth, olive-sized gallstones (cholelithiasis), set against a clean, abstract anatomical background.
+Lighting: Clean, bright luxury medical studio lighting, soft shadows.
+Color Palette: Brand Dark Navy (#1E2E4A), Brand Steel Blue (#486694), Midnight Obsidian (#101B2C), Clinical White.
+Composition: Focused clinical macro view.
+Mood: Informative, sophisticated, clean.
+Suffixes: high-fidelity medical illustration, 8k, detailed textures, textbook quality --ar 16:9 --v 6.0
+Negative Prompt: plastic, CGI, 3D render, cartoon, toy, low quality 3d render, clay, video game graphic, hologram, sci-fi, futuristic, spaceship, cyberpunk, neon, glowing digital UI, hud, data rings, blueprints, user interface, text, words, letters, watermark, signature, blood, raw tissue.
+```
+
+### `hernia_inguinal.png`
+**Padecimiento:** Hernia Inguinal
+**Prompt:**
+```
+Close-up photorealistic medical illustration showing the lower groin abdominal wall muscle fibers with a small inguinal hernia defect and a premium surgical mesh covering it flatly, clean textbook quality.
+Lighting: Clean, bright luxury medical studio lighting, soft shadows.
+Color Palette: Brand Dark Navy (#1E2E4A), Brand Steel Blue (#486694), Midnight Obsidian (#101B2C), Clinical White.
+Composition: Symmetrical focused clinical macro of the groin area.
+Mood: Informative, clean, surgical.
+Suffixes: high-fidelity medical illustration, 8k, detailed textures, textbook quality --ar 16:9 --v 6.0
+Negative Prompt: plastic, CGI, 3D render, cartoon, toy, low quality 3d render, clay, video game graphic, hologram, sci-fi, futuristic, spaceship, cyberpunk, neon, glowing digital UI, hud, data rings, blueprints, user interface, text, words, letters, watermark, signature, blood.
+```
+
+### `hernia_umbilical.png`
+**Padecimiento:** Hernia Umbilical
+**Prompt:**
+```
+Close-up photorealistic medical illustration showing the central abdominal wall muscle fibers at the navel with a small umbilical hernia defect and a premium surgical mesh covering it flatly, clean textbook quality.
+Lighting: Clean, bright luxury medical studio lighting, soft shadows.
+Color Palette: Brand Dark Navy (#1E2E4A), Brand Steel Blue (#486694), Midnight Obsidian (#101B2C), Clinical White.
+Composition: Symmetrical focused clinical macro of the umbilical area.
+Mood: Informative, clean, surgical.
+Suffixes: high-fidelity medical illustration, 8k, detailed textures, textbook quality --ar 16:9 --v 6.0
+Negative Prompt: plastic, CGI, 3D render, cartoon, toy, low quality 3d render, clay, video game graphic, hologram, sci-fi, futuristic, spaceship, cyberpunk, neon, glowing digital UI, hud, data rings, blueprints, user interface, text, words, letters, watermark, signature, blood.
+```
+
+### `apendicitis.png`
+**Padecimiento:** Apendicitis Aguda
+**Prompt:**
+```
+High-fidelity medical illustration of the human lower right abdomen showing a clean, non-graphic representation of the appendix organ with a soft localized glow indicating distress, clinical textbook style.
+Lighting: Clean, bright luxury medical studio lighting, soft shadows.
+Color Palette: Brand Dark Navy (#1E2E4A), Brand Steel Blue (#486694), Midnight Obsidian (#101B2C), Clinical White.
+Composition: Symmetrical focused clinical view.
+Mood: Informative, professional, clean.
+Suffixes: high-fidelity medical illustration, 8k, detailed textures, textbook quality --ar 16:9 --v 6.0
+Negative Prompt: plastic, CGI, 3D render, cartoon, toy, low quality 3d render, clay, video game graphic, hologram, sci-fi, futuristic, spaceship, cyberpunk, neon, glowing digital UI, hud, data rings, blueprints, user interface, text, words, letters, watermark, signature, blood, open wounds.
+```
+
+### `hernia_hiatal.png`
+**Padecimiento:** Hernia Hiatal y Funduplicatura Laparoscópica
+**Prompt:**
+```
+Medical anatomical model showing a clean cross-section of the human lower esophagus, the diaphragm hiatal opening, and the stomach dome, demonstrating the anatomical relation in a clinical style.
+Lighting: Clean, bright luxury medical studio lighting, soft shadows.
+Color Palette: Brand Dark Navy (#1E2E4A), Brand Steel Blue (#486694), Midnight Obsidian (#101B2C), Clinical White.
+Composition: Focused clinical macro.
+Mood: Informative, sophisticated, clean.
+Suffixes: high-fidelity medical illustration, 8k, detailed textures, textbook quality --ar 16:9 --v 6.0
+Negative Prompt: plastic, CGI, 3D render, cartoon, toy, low quality 3d render, clay, video game graphic, hologram, sci-fi, futuristic, spaceship, cyberpunk, neon, glowing digital UI, hud, data rings, blueprints, user interface, text, words, letters, watermark, signature.
+```
+
+### `reflujo_gastroesofagico.png`
+**Padecimiento:** Reflujo Gastroesofágico
+**Prompt:**
+```
+Medical anatomical model showing a clean cross-section of the human stomach and esophagus, demonstrating stomach acid refluxing upwards past the weak lower esophageal sphincter, clinical style.
+Lighting: Clean, bright luxury medical studio lighting, soft shadows.
+Color Palette: Brand Dark Navy (#1E2E4A), Brand Steel Blue (#486694), Midnight Obsidian (#101B2C), Clinical White, Amber.
+Composition: Focused clinical view.
+Mood: Informative, sophisticated, clean.
+Suffixes: high-fidelity medical illustration, 8k, detailed textures, textbook quality --ar 16:9 --v 6.0
+Negative Prompt: plastic, CGI, 3D render, cartoon, toy, low quality 3d render, clay, video game graphic, hologram, sci-fi, futuristic, spaceship, cyberpunk, neon, glowing digital UI, hud, data rings, blueprints, user interface, text, words, letters, watermark, signature.
+```
+
+### `gastritis.png`
+**Padecimiento:** Gastritis
+**Prompt:**
+```
+Aesthetic medical illustration of a human stomach, showing a clean, non-graphic cross-section detailing the protective mucosa lining of the stomach walls with a soft warm glow representing localized gastritis inflammation.
+Lighting: Clean, bright luxury medical studio lighting, soft shadows.
+Color Palette: Brand Dark Navy (#1E2E4A), Brand Steel Blue (#486694), Midnight Obsidian (#101B2C), Clinical White, Warm Rose.
+Composition: Focused clinical macro view.
+Mood: Informative, sophisticated, clean.
+Suffixes: high-fidelity medical illustration, 8k, detailed textures, textbook quality --ar 16:9 --v 6.0
+Negative Prompt: plastic, CGI, 3D render, cartoon, toy, low quality 3d render, clay, video game graphic, hologram, sci-fi, futuristic, spaceship, cyberpunk, neon, glowing digital UI, hud, data rings, blueprints, user interface, text, words, letters, watermark, signature, blood, raw tissue.
+```
+
+### `volvulo_gastrico.png`
+**Padecimiento:** Vólvulo Gástrico
+**Prompt:**
+```
+Aesthetic medical illustration showing a clean, non-graphic anatomical diagram of the human stomach showing organoaxial torsion (twisting of the stomach organ), clear clinical presentation.
+Lighting: Clean, bright luxury medical studio lighting, soft shadows.
+Color Palette: Brand Dark Navy (#1E2E4A), Brand Steel Blue (#486694), Midnight Obsidian (#101B2C), Clinical White.
+Composition: Symmetrical focused clinical view.
+Mood: Informative, professional, clean.
+Suffixes: high-fidelity medical illustration, 8k, detailed textures, textbook quality --ar 16:9 --v 6.0
+Negative Prompt: plastic, CGI, 3D render, cartoon, toy, low quality 3d render, clay, video game graphic, hologram, sci-fi, futuristic, spaceship, cyberpunk, neon, glowing digital UI, hud, data rings, blueprints, user interface, text, words, letters, watermark, signature, blood, open wounds.
+```
+
+### `tumores_esofagicos.png`
+**Padecimiento:** Tumores Esofágicos
+**Prompt:**
+```
+Aesthetic medical illustration of a clean human esophagus cross-section showing a small, localized, non-graphic benign growth (tumor) on the inner muscular lining, clinical textbook style.
+Lighting: Clean, bright luxury medical studio lighting, soft shadows.
+Color Palette: Brand Dark Navy (#1E2E4A), Brand Steel Blue (#486694), Midnight Obsidian (#101B2C), Clinical White, Soft Tissue Pink.
+Composition: Focused clinical macro.
+Mood: Informative, sophisticated, clean.
+Suffixes: high-fidelity medical illustration, 8k, detailed textures, textbook quality --ar 16:9 --v 6.0
+Negative Prompt: plastic, CGI, 3D render, cartoon, toy, low quality 3d render, clay, video game graphic, hologram, sci-fi, futuristic, spaceship, cyberpunk, neon, glowing digital UI, hud, data rings, blueprints, user interface, text, words, letters, watermark, signature, blood, raw wounds.
+```
+
+### `tumores_gastricos.png`
+**Padecimiento:** Tumores Gástricos
+**Prompt:**
+```
+Aesthetic medical illustration of a clean human stomach cross-section showing a small, localized, non-graphic benign growth (tumor) on the inner stomach lining, clinical textbook style.
+Lighting: Clean, bright luxury medical studio lighting, soft shadows.
+Color Palette: Brand Dark Navy (#1E2E4A), Brand Steel Blue (#486694), Midnight Obsidian (#101B2C), Clinical White, Soft Tissue Pink.
+Composition: Focused clinical macro.
+Mood: Informative, sophisticated, clean.
+Suffixes: high-fidelity medical illustration, 8k, detailed textures, textbook quality --ar 16:9 --v 6.0
+Negative Prompt: plastic, CGI, 3D render, cartoon, toy, low quality 3d render, clay, video game graphic, hologram, sci-fi, futuristic, spaceship, cyberpunk, neon, glowing digital UI, hud, data rings, blueprints, user interface, text, words, letters, watermark, signature, blood, raw wounds.
+```
+
+### `acalasia.png`
+**Padecimiento:** Acalasia y Miotomía Esofágica
+**Prompt:**
+```
+Medical anatomical cross-section showing the human lower esophagus meeting the stomach, illustrating the narrowing at the lower esophageal sphincter (achalasia) with a clean textbook presentation.
+Lighting: Clean, bright luxury medical studio lighting, soft shadows.
+Color Palette: Brand Dark Navy (#1E2E4A), Brand Steel Blue (#486694), Midnight Obsidian (#101B2C), Clinical White.
+Composition: Focused clinical macro.
+Mood: Informative, sophisticated, clean.
+Suffixes: high-fidelity medical illustration, 8k, detailed textures, textbook quality --ar 16:9 --v 6.0
+Negative Prompt: plastic, CGI, 3D render, cartoon, toy, low quality 3d render, clay, video game graphic, hologram, sci-fi, futuristic, spaceship, cyberpunk, neon, glowing digital UI, hud, data rings, blueprints, user interface, text, words, letters, watermark, signature.
+```
+
+### `bypass_gastrico.png`
+**Padecimiento:** Bypass Gástrico
+**Prompt:**
+```
+Aesthetic medical illustration of a gastric bypass (Roux-en-Y) surgical result, showing a small stomach pouch connected to the middle section of the small intestine, clean clinical representation.
+Lighting: Clean, bright luxury medical studio lighting, soft shadows.
+Color Palette: Brand Dark Navy (#1E2E4A), Brand Steel Blue (#486694), Midnight Obsidian (#101B2C), Clinical White.
+Composition: Symmetrical focused clinical view.
+Mood: Informative, professional, clean.
+Suffixes: high-fidelity medical illustration, 8k, detailed textures, textbook quality --ar 16:9 --v 6.0
+Negative Prompt: plastic, CGI, 3D render, cartoon, toy, low quality 3d render, clay, video game graphic, hologram, sci-fi, futuristic, spaceship, cyberpunk, neon, glowing digital UI, hud, data rings, blueprints, user interface, text, words, letters, watermark, signature, blood.
+```
+
+### `cirugia_revisional.png`
+**Padecimiento:** Cirugía Revisional
+**Prompt:**
+```
+Aesthetic medical illustration representing reconstructive bariatric surgery revision, showing a surgical diagram with detailed adjustment marks on stomach anatomy, clean textbook quality.
+Lighting: Clean, bright luxury medical studio lighting, soft shadows.
+Color Palette: Brand Dark Navy (#1E2E4A), Brand Steel Blue (#486694), Midnight Obsidian (#101B2C), Clinical White.
+Composition: Symmetrical focused clinical view.
+Mood: Informative, professional, clean.
+Suffixes: high-fidelity medical illustration, 8k, detailed textures, textbook quality --ar 16:9 --v 6.0
+Negative Prompt: plastic, CGI, 3D render, cartoon, toy, low quality 3d render, clay, video game graphic, hologram, sci-fi, futuristic, spaceship, cyberpunk, neon, glowing digital UI, hud, data rings, blueprints, user interface, text, words, letters, watermark, signature, blood.
+```
+
+### `cirugia_ileal.png`
+**Padecimiento:** Cirugía Ileal (SASI)
+**Prompt:**
+```
+Aesthetic medical illustration of a Single Anastomosis Stomach Ileal Bypass (SASI) surgical layout, combining gastric sleeve with an intestinal loop join, clean anatomical presentation.
+Lighting: Clean, bright luxury medical studio lighting, soft shadows.
+Color Palette: Brand Dark Navy (#1E2E4A), Brand Steel Blue (#486694), Midnight Obsidian (#101B2C), Clinical White.
+Composition: Symmetrical focused clinical view.
+Mood: Informative, professional, clean.
+Suffixes: high-fidelity medical illustration, 8k, detailed textures, textbook quality --ar 16:9 --v 6.0
+Negative Prompt: plastic, CGI, 3D render, cartoon, toy, low quality 3d render, clay, video game graphic, hologram, sci-fi, futuristic, spaceship, cyberpunk, neon, glowing digital UI, hud, data rings, blueprints, user interface, text, words, letters, watermark, signature, blood.
+```
+
+### `balon_gastrico.png`
+**Padecimiento:** Balón Gástrico
+**Prompt:**
+```
+Aesthetic medical illustration of a human stomach containing an inflated, soft, transparent silicone intragastric balloon device (balón gástrico), clean clinical textbook style.
+Lighting: Clean, bright luxury medical studio lighting, soft shadows.
+Color Palette: Brand Dark Navy (#1E2E4A), Brand Steel Blue (#486694), Midnight Obsidian (#101B2C), Clinical White, Translucent Blue.
+Composition: Focused clinical macro view.
+Mood: Informative, sophisticated, clean.
+Suffixes: high-fidelity medical illustration, 8k, detailed textures, textbook quality --ar 16:9 --v 6.0
+Negative Prompt: plastic, CGI, 3D render, cartoon, toy, low quality 3d render, clay, video game graphic, hologram, sci-fi, futuristic, spaceship, cyberpunk, neon, glowing digital UI, hud, data rings, blueprints, user interface, text, words, letters, watermark, signature, blood.
+```
+
 ---
 
 ## 🛠️ Servicios (`/public/images/services/`)

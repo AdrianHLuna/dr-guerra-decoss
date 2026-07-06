@@ -94,19 +94,16 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Widget 3: HORARIOS */}
+          {/* Widget 3: CITAS */}
           <div>
             <h3 className="text-white text-xs font-bold uppercase tracking-widest mb-6 border-b border-slate-800 pb-3">
-              HORARIOS
+              CITAS
             </h3>
             <div className="flex flex-col gap-4 text-xs leading-relaxed">
               <div>
-                <h4 className="font-bold text-white mb-1">Lunes a Viernes</h4>
-                <p className="font-light">16:00 a 21:00 hrs</p>
-              </div>
-              <div>
-                <h4 className="font-bold text-white mb-1">Sábado</h4>
-                <p className="font-light">9:00 a 17:00 hrs</p>
+                <p className="font-light text-slate-350">
+                  Toda consulta es previa cita. Favor de consultar disponibilidad.
+                </p>
               </div>
               <div className="mt-4 border-t border-slate-800 pt-4">
                 <h4 className="font-bold text-white mb-2 text-[10px] uppercase tracking-wider">Métodos de Pago Aceptados</h4>

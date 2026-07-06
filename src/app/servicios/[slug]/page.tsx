@@ -3,7 +3,7 @@ import { doctor } from "@/data/doctor";
 import { notFound } from "next/navigation";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import StructuredData from "@/components/StructuredData";
-import { FaCheckCircle, FaInfoCircle, FaCalendarCheck } from "react-icons/fa";
+import { FaCheckCircle, FaInfoCircle } from "react-icons/fa";
 import { FadeUp, StaggerContainer, StaggerItem } from "@/components/Animations";
 import Image from "next/image";
 
@@ -73,9 +73,9 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           </div>
         </FadeUp>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <div className="max-w-4xl mx-auto mt-12">
           {/* Contenido Principal */}
-          <StaggerContainer className="lg:col-span-2 space-y-12">
+          <StaggerContainer className="space-y-12">
             
             <StaggerItem>
               <h2 className="text-3xl font-black text-slate-900 mb-6 flex items-center gap-3"><FaInfoCircle className="text-accent" /> Ficha Técnica</h2>
@@ -130,17 +130,6 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               </div>
             </StaggerItem>
           </StaggerContainer>
-
-          {/* Sidebar CTA */}
-          <FadeUp delay={0.2} className="lg:col-span-1">
-            <div className="sticky top-32 bg-primary rounded-3xl p-8 text-white shadow-xl group">
-              <h3 className="text-2xl font-black mb-4">¿Requiere este servicio?</h3>
-              <p className="text-slate-300 mb-8 font-light text-sm leading-relaxed">Antes de cualquier procedimiento, el Dr. Daniel Guerra realizará una valoración médica detallada para diseñar el plan de tratamiento óptimo para ti.</p>
-              <a href={`https://wa.me/${doctor.whatsapp.replace(/\D/g, "")}`} target="_blank" rel="noreferrer" className="block w-full flex items-center justify-center gap-3 bg-white text-primary font-black py-4 rounded-xl hover:bg-slate-50 transition-colors shadow-lg text-xs uppercase tracking-wider font-bold">
-                <FaCalendarCheck className="text-accent" /> Agendar Valoración
-              </a>
-            </div>
-          </FadeUp>
         </div>
       </div>
     </div>

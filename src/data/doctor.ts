@@ -20,25 +20,30 @@ export const doctor: DoctorProfile = {
   consultationPrice: 1200,
   paymentMethods: ["Tarjeta de Crédito", "Tarjeta de Débito", "Efectivo", "Transferencia"],
   insurances: [], // Omitido/pendiente según instrucciones
-  schedule: "Lunes a viernes de 16:00 a 21:00. Sábados de 9:00 a 17:00",
+  schedule: "Toda consulta es previa cita. Favor de consultar disponibilidad.",
   photo: "/images/doctor.png",
   bio: "El Dr. Daniel Guerra de Coss es un destacado Cirujano Laparoscopista Avanzado con Alta Especialidad en Cirugía Digestiva y Subespecialidad en Cirugía Bariátrica y Metabólica. Egresado de la Universidad Autónoma de Guadalajara (UAG) y especializado por la Universidad Nacional Autónoma de México (UNAM), el Dr. Guerra de Coss cuenta con más de 15 años de trayectoria profesional. Ha brindado atención médica a más de 18,000 pacientes y realizado con éxito más de 2,000 cirugías gastrointestinales y metabólicas, consolidándose como un referente en el tratamiento quirúrgico de la obesidad y de patologías complejas del sistema digestivo.",
   philosophy: "Cirugía laparoscópica avanzada, bariátrica y metabólica de alta precisión, enfocada en la seguridad del paciente y en un abordaje mínimamente invasivo para una pronta recuperación.",
   experience: [
     {
-      year: "Trayectoria Profesional",
-      title: "Cirujano Laparoscopista Avanzado y Especialista en Cirugía Digestiva y Bariátrica",
-      description: "Más de 15 años de experiencia clínica atendiendo patologías del aparato digestivo, pared abdominal y obesidad con abordaje laparoscópico avanzado.",
+      year: "+10 Años",
+      title: "Medicina de Alta Especialidad",
+      description: "De experiencia realizando medicina de alta especialidad.",
     },
     {
-      year: "Volumen Quirúrgico",
-      title: "Más de 2,000 cirugías realizadas con éxito",
-      description: "Especialista con amplia destreza técnica en procedimientos de manga gástrica, restitución de tránsito intestinal y resección de patologías tumorales.",
+      year: "+6 Años",
+      title: "Procedimientos de Alta Complejidad",
+      description: "De experiencia realizando procedimientos de alta complejidad.",
     },
     {
-      year: "Atención Clínica",
-      title: "Más de 18,000 pacientes atendidos",
-      description: "Consulta médica especializada enfocada en el diagnóstico preciso y el acompañamiento humano pre y postoperatorio."
+      year: "+1,000",
+      title: "Cirugía Laparoscópica Avanzada",
+      description: "Procedimientos de cirugía laparoscópica avanzada.",
+    },
+    {
+      year: "+200",
+      title: "Cirugía Bariátrica y Metabólica",
+      description: "Procedimientos de cirugía bariátrica y metabólica por mínima invasión.",
     }
   ],
   certifications: [

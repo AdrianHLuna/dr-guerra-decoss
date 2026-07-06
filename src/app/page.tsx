@@ -26,6 +26,7 @@ import Image from "next/image";
 
 export default function Home() {
   const [activePhotoIndex, setActivePhotoIndex] = useState<number | null>(null);
+  const [expandedBio, setExpandedBio] = useState(false);
 
   const whatsappUrl = `https://wa.me/${doctor.whatsapp.replace(/\D/g, "")}`;
 
@@ -64,8 +65,8 @@ export default function Home() {
       <StructuredData data={homeSchema} />
 
       <section className="relative min-h-[calc(100vh-120px)] lg:h-[calc(100vh-120px)] flex flex-col justify-between bg-slate-50 border-b border-slate-200 pt-16 pb-0 bg-[url('/blurred-office-bg.png')] bg-cover bg-center bg-no-repeat">
-        {/* Soft overlay on mobile to make text highly readable */}
-        <div className="absolute inset-0 bg-white/60 lg:bg-transparent z-0" />
+        {/* Soft overlay on all viewports to make text highly readable */}
+        <div className="absolute inset-0 z-0" />
         
         <div className="container mx-auto px-6 max-w-7xl relative z-10 flex-grow flex items-end">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end w-full">
@@ -88,22 +89,22 @@ export default function Home() {
             </div>
 
             {/* Right Column: Centered Text Content */}
-            <div className="lg:col-span-6 bg-white/90 lg:bg-transparent p-8 lg:p-0 border border-slate-200/60 lg:border-0 shadow-lg lg:shadow-none flex flex-col items-center text-center self-center lg:mb-20">
+            <div className="lg:col-span-6 bg-white/95 backdrop-blur-md p-8 lg:p-12 border border-slate-200/60 shadow-xl rounded-3xl flex flex-col items-center text-center self-center lg:mb-20">
               <span className="text-sm font-bold text-accent uppercase tracking-wider mb-2">
-                Tu salud en manos del
+                Tu salud en manos del especialista
               </span>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary mb-6 font-serif leading-tight uppercase">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary mb-4 font-serif leading-tight uppercase">
                 {doctor.title} {doctor.name}
               </h1>
-              <p className="text-base sm:text-lg text-stone-750 mb-8 max-w-xl leading-relaxed font-light">
-                Evita complicaciones y acude conmigo para un diagnóstico oportuno y recibe el tratamiento idóneo a la enfermedad gastrointestinal, de pared abdominal o metabólica diagnosticada.
-              </p>
+              <h2 className="text-lg sm:text-xl font-bold text-stone-650 mb-4 uppercase tracking-wide">
+                Recupera tu peso, tu salud y tu calidad de vida
+              </h2>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full">
                 <a
                   href={whatsappUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="px-10 py-4 bg-accent hover:bg-primary text-white font-bold text-xs uppercase tracking-widest transition-all duration-300 flex items-center justify-center gap-3 shadow-md"
+                  className="px-10 py-4 bg-accent hover:bg-primary text-white font-bold text-xs uppercase tracking-widest transition-all duration-300 flex items-center justify-center gap-3 shadow-md w-full sm:w-auto"
                 >
                   <FaCalendarCheck size={14} /> Agendar Cita
                 </a>
@@ -144,18 +145,14 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Card 3: Horarios */}
+            {/* Card 3: Citas */}
             <div className="flex items-start gap-4 p-4">
               <FaClock className="text-accent text-3xl flex-shrink-0 mt-1" />
               <div>
-                <h3 className="font-bold text-primary uppercase text-xs tracking-wider mb-2">Horarios</h3>
-                <p className="text-stone-600 text-xs font-light leading-relaxed">
-                  Lunes a Viernes: 16:00 a 21:00 hrs
+                <h3 className="font-bold text-primary uppercase text-xs tracking-wider mb-2">Citas</h3>
+                <p className="text-stone-650 text-xs font-semibold leading-relaxed">
+                  Toda consulta es previa cita. Favor de consultar disponibilidad.
                 </p>
-                <p className="text-stone-600 text-xs font-light leading-relaxed mt-1">
-                  Sábado: 9:00 a 17:00 hrs
-                </p>
-                <p className="text-stone-500 text-[10px] mt-1">Previa cita programada.</p>
               </div>
             </div>
           </div>
@@ -175,30 +172,54 @@ export default function Home() {
                 DR. DANIEL GUERRA DE COSS
               </h2>
               <div className="h-1 w-20 bg-accent mb-8" />
-              <p className="text-stone-700 font-light leading-relaxed mb-6">
-                Soy especialista en cirugía laparoscópica avanzada y de mínima invasión enfocado en enfermedades que afectan el tracto digestivo y la pared abdominal, así como cirugías para el control de la obesidad, utilizando los tratamientos y las técnicas más actualizadas.
-              </p>
-              <p className="text-stone-700 font-light leading-relaxed mb-8">
-                Cuento con un Postgrado en Alta Especialidad en Cirugía Digestiva avalado por la Universidad Nacional Autónoma de México (UNAM) y subespecialidad en cirugía bariátrica y metabólica, brindando atención integral y de alta especialización a pacientes en la Ciudad de México y Chiapas.
-              </p>
+              <div className="space-y-4 text-stone-700 font-light leading-relaxed mb-8 text-sm sm:text-base">
+                <p>
+                  Soy Médico por la prestigiosa Universidad Autónoma De Guadalajara en Guadalajara Jalisco, en donde formé bases sólidas para mi camino como médico. Ahí decidí que quería ser especialista.
+                </p>
+                <p>
+                  Por lo que para alcanzar mi sueño me mudé a la Ciudad de México en donde cursé la especialidad de: <strong>&ldquo;Cirugía General&rdquo;</strong> en el hospital más grande de México y Latinoamérica, el &ldquo;Hospital General de México Dr. Eduardo Liceaga&rdquo;, el cual es avalado por la UNAM. En este hospital atendemos pacientes con hernias de pared abdominal, problemas intestinales o traumatismos de urgencia, y fue en esta especialidad que decidí enfocarme en tratar las alteraciones del tracto digestivo y resolverlas por mínima invasión.
+                </p>
+                
+                {expandedBio && (
+                  <div className="space-y-4 pt-4 border-t border-slate-100">
+                    <p>
+                      Por lo tanto, decidí realizar el Alta Especialidad en: <strong>&ldquo;Cirugía Laparoscópica Avanzada de Tracto Digestivo Superior&rdquo;</strong> en el hospital que ahora considero mi segunda casa, el &ldquo;Hospital General de México Dr. Eduardo Liceaga&rdquo;, también avalado por la UNAM, atendiendo siempre con la mayor calidad y calidez a los pacientes.
+                    </p>
+                    <p>
+                      Al término de mis estudios opté por subespecializarme en una rama particular como ninguna otra al ver el serio problema de sobrepeso y obesidad al cual nos enfrentamos en México y en el mundo; cursé la Subespecialidad en: <strong>&ldquo;Cirugía Bariátrica y Metabólica&rdquo;</strong> en el prestigioso &ldquo;Hospital General de México Dr. Eduardo Liceaga&rdquo;, curso avalado por la UNAM, en donde vemos el tracto digestivo pero ahora desde la otra cara de la moneda: el exceso de peso asociado a la alimentación. Operando a los pacientes por mínima invasión logramos reiniciar el peso del paciente y recuperar la salud que a lo largo de los años perdió, siempre con la mayor calidad y calidez humana.
+                    </p>
+                    <p className="font-bold text-primary">
+                      Hoy en día soy orgullosamente uno de los únicos médicos en el país que cuenta con 3 especialidades, por lo cual estoy capacitado para ofrecerte un tratamiento integral esperando siempre obtener los mejores resultados.
+                    </p>
+                  </div>
+                )}
 
-              {/* Qualifications / Cédulas block */}
-              <div className="bg-slate-50 border border-slate-200 p-6 rounded-lg mb-8">
-                <h3 className="font-bold text-primary uppercase text-xs tracking-wider mb-4">Cédulas Profesionales</h3>
-                <ul className="space-y-3 text-xs text-stone-600">
-                  <li className="flex items-center gap-3">
-                    <FaCheckCircle className="text-accent flex-shrink-0" />
-                    <span><strong>Lic. Médico Cirujano:</strong> Céd. Prof. 11938343 (Universidad Autónoma de Guadalajara)</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <FaCheckCircle className="text-accent flex-shrink-0" />
-                    <span><strong>Esp. Cirugía Laparoscópica Avanzada:</strong> Céd. Esp. 14368935 (Universidad Nacional Autónoma de México)</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <FaCheckCircle className="text-accent flex-shrink-0" />
-                    <span><strong>Alta Especialidad:</strong> Reg. C24014424 (Cirugía Digestiva - UNAM)</span>
-                  </li>
-                </ul>
+                <button
+                  onClick={() => setExpandedBio(!expandedBio)}
+                  className="mt-2 text-accent font-bold hover:text-primary transition-colors text-xs uppercase tracking-wider flex items-center gap-1 cursor-pointer focus:outline-none"
+                >
+                  {expandedBio ? "Ver menos ▲" : "Ver más ▼"}
+                </button>
+              </div>
+
+              {/* Trayectoria / Estadísticas */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                <div className="bg-slate-50 border border-slate-200 p-5 rounded-2xl flex flex-col justify-center">
+                  <span className="text-3xl font-black text-accent mb-1">+10 Años</span>
+                  <span className="text-xs text-stone-600 font-bold uppercase tracking-wider leading-relaxed">De experiencia realizando medicina de alta especialidad</span>
+                </div>
+                <div className="bg-slate-50 border border-slate-200 p-5 rounded-2xl flex flex-col justify-center">
+                  <span className="text-3xl font-black text-accent mb-1">+6 Años</span>
+                  <span className="text-xs text-stone-600 font-bold uppercase tracking-wider leading-relaxed">De experiencia realizando procedimientos de alta complejidad</span>
+                </div>
+                <div className="bg-slate-50 border border-slate-200 p-5 rounded-2xl flex flex-col justify-center">
+                  <span className="text-3xl font-black text-accent mb-1">+1,000</span>
+                  <span className="text-xs text-stone-600 font-bold uppercase tracking-wider leading-relaxed">Procedimientos de cirugía laparoscópica avanzada</span>
+                </div>
+                <div className="bg-slate-50 border border-slate-200 p-5 rounded-2xl flex flex-col justify-center">
+                  <span className="text-3xl font-black text-accent mb-1">+200</span>
+                  <span className="text-xs text-stone-600 font-bold uppercase tracking-wider leading-relaxed">Procedimientos de cirugía bariátrica y metabólica por mínima invasión</span>
+                </div>
               </div>
 
               {/* Memberships info */}
@@ -207,9 +228,9 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Right side image */}
-            <div className="lg:col-span-5 flex justify-center">
-              <div className="relative w-full max-w-[360px] aspect-[4/5] bg-slate-200 border border-slate-300 shadow-md">
+            {/* Right side image & Credentials Logos */}
+            <div className="lg:col-span-5 flex flex-col items-center gap-6">
+              <div className="relative w-full max-w-[360px] aspect-[4/5] bg-slate-200 border border-slate-300 shadow-md rounded-2xl overflow-hidden">
                 <Image
                   src="/doctor-aboutme.jpg"
                   alt={`Dr. Daniel Guerra de Coss`}
@@ -217,6 +238,57 @@ export default function Home() {
                   sizes="(max-width: 1024px) 100vw, 360px"
                   className="object-cover"
                 />
+              </div>
+
+              {/* Institution and Certification Logos */}
+              <div className="w-full max-w-[360px] bg-slate-50 border border-slate-200/80 p-6 rounded-2xl">
+                <h4 className="text-xs font-bold text-primary uppercase tracking-widest mb-4 text-center">
+                  Instituciones Académicas
+                </h4>
+                <div className="grid grid-cols-2 gap-4 items-center justify-items-center mb-6">
+                  <div className="h-14 w-full relative flex items-center justify-center bg-white p-2 border border-slate-100 rounded-xl shadow-xs" title="Universidad Autónoma de Guadalajara">
+                    <Image
+                      src="/images/uag.png"
+                      alt="UAG - Universidad Autónoma de Guadalajara"
+                      width={120}
+                      height={44}
+                      className="object-contain max-h-10"
+                    />
+                  </div>
+                  <div className="h-14 w-full relative flex items-center justify-center bg-white p-2 border border-slate-100 rounded-xl shadow-xs" title="Universidad Nacional Autónoma de México">
+                    <Image
+                      src="/images/unam.png"
+                      alt="UNAM - Universidad Nacional Autónoma de México"
+                      width={120}
+                      height={44}
+                      className="object-contain max-h-10"
+                    />
+                  </div>
+                </div>
+
+                <h4 className="text-xs font-bold text-primary uppercase tracking-widest mb-4 text-center">
+                  Certificaciones Médicas
+                </h4>
+                <div className="grid grid-cols-2 gap-4 items-center justify-items-center">
+                  <div className="h-14 w-full relative flex items-center justify-center bg-white p-2 border border-slate-100 rounded-xl shadow-xs" title="Colegio Mexicano de Cirugía General">
+                    <Image
+                      src="/images/cmcg.png"
+                      alt="Colegio Mexicano de Cirugía General"
+                      width={120}
+                      height={44}
+                      className="object-contain max-h-10"
+                    />
+                  </div>
+                  <div className="h-14 w-full relative flex items-center justify-center bg-white p-2 border border-slate-100 rounded-xl shadow-xs" title="Colegio Mexicano de Cirugía para la Obesidad y Enfermedades Metabólicas">
+                    <Image
+                      src="/images/cmcoem.png"
+                      alt="Colegio Mexicano de Cirugía para la Obesidad y Enfermedades Metabólicas"
+                      width={120}
+                      height={44}
+                      className="object-contain max-h-10"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -445,7 +517,7 @@ export default function Home() {
               </div>
             </div>
             <p className="text-stone-700 font-light italic leading-relaxed text-sm md:text-base">
-              "Excelente especialista. Dedicación y paciencia durante la consulta, muy explicativo y aclaración de dudas. Recomiendo ampliamente al Dr. Daniel Guerra de Coss, solucionó mi problema digestivo de forma profesional."
+              &ldquo;Excelente especialista. Dedicación y paciencia durante la consulta, muy explicativo y aclaración de dudas. Recomiendo ampliamente al Dr. Daniel Guerra de Coss, solucionó mi problema digestivo de forma profesional.&rdquo;
             </p>
             <div className="mt-8 text-right">
               <a
@@ -465,17 +537,18 @@ export default function Home() {
       <section id="pagos-seguros" className="py-20 bg-slate-50 border-t border-slate-200">
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Left Column: Pagos */}
+            {/* Left Column: Costo de Consulta */}
             <div className="bg-white border border-slate-200 p-8 rounded-lg">
               <span className="text-xs font-bold text-stone-500 uppercase tracking-widest mb-3 block">
-                PREGUNTA POR
+                Valoración Médica
               </span>
-              <h2 className="text-2xl font-bold text-primary font-serif mb-6 uppercase">
-                FACILIDADES DE PAGO
+              <h2 className="text-2xl font-bold text-primary font-serif mb-2 uppercase">
+                Costo de la Consulta
               </h2>
-              <p className="text-stone-600 text-xs font-light leading-relaxed mb-6">
-                Ofrecemos opciones cómodas de pago para tus consultas y procedimientos quirúrgicos programados.
-              </p>
+              <div className="flex items-baseline gap-2 mb-6">
+                <span className="text-4xl font-black text-primary font-sans">$1,200</span>
+                <span className="text-sm text-stone-500 font-bold uppercase tracking-wider">MXN</span>
+              </div>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                 <div className="bg-slate-50 p-4 border border-slate-200 text-center rounded-lg">
                   <FaMoneyBillWave className="text-accent text-xl mx-auto mb-2" />
@@ -523,7 +596,89 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 8. GALLERY SECTION (Static Grid) */}
+      {/* 8. CALL TO ACTION SECTION */}
+      <section className="py-20 bg-gradient-to-br from-primary via-slate-900 to-primary text-white relative overflow-hidden">
+        {/* Decorative background blur objects */}
+        <div className="absolute top-0 left-0 w-96 h-96 bg-accent/20 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary/30 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="container mx-auto px-6 max-w-5xl relative z-10 text-center">
+          <span className="text-xs font-bold text-accent uppercase tracking-widest mb-3 block">
+            Atención Médica Especializada
+          </span>
+          <h2 className="text-4xl sm:text-5xl font-black mb-4 font-serif uppercase tracking-tight">
+            Dr. Daniel Guerra De Coss
+          </h2>
+          <p className="text-slate-350 text-sm max-w-xl mx-auto mb-10 leading-relaxed font-light">
+            Especialista certificado con amplia experiencia y equipamiento de vanguardia para brindarte un tratamiento seguro y de mínima invasión.
+          </p>
+
+          {/* Specialties List */}
+          <div className="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 flex flex-col justify-between">
+              <FaCheckCircle className="text-accent text-2xl mx-auto mb-3" />
+              <h4 className="font-bold text-sm tracking-wide text-white uppercase">Cirugía General y Laparoscopía Avanzada</h4>
+            </div>
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 flex flex-col justify-between">
+              <FaCheckCircle className="text-accent text-2xl mx-auto mb-3" />
+              <h4 className="font-bold text-sm tracking-wide text-white uppercase">Cirugía Bariátrica y Metabólica</h4>
+            </div>
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 flex flex-col justify-between">
+              <FaCheckCircle className="text-accent text-2xl mx-auto mb-3" />
+              <h4 className="font-bold text-sm tracking-wide text-white uppercase">Cirugía Digestiva de Mínima Invasión</h4>
+            </div>
+          </div>
+
+          {/* Contact Actions Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto items-stretch">
+            {/* Citas */}
+            <div className="bg-white text-slate-900 rounded-3xl p-8 shadow-2xl flex flex-col items-center justify-between border-4 border-accent/25 hover:scale-[1.02] transition-all duration-300">
+              <div className="flex flex-col items-center">
+                <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mb-4">
+                  <FaCalendarCheck className="text-accent text-2xl" />
+                </div>
+                <h3 className="text-xs font-black uppercase tracking-wider text-slate-500 mb-1">Agenda tu Cita</h3>
+                <p className="text-2xl font-black text-primary tracking-wide mb-6">564 924 63 08</p>
+              </div>
+              <div className="flex gap-3 w-full mt-auto">
+                <a
+                  href="https://wa.me/525649246308"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex-1 py-3 px-4 bg-green-600 hover:bg-green-700 text-white font-bold text-xs uppercase tracking-wider rounded-xl transition-colors flex items-center justify-center gap-2"
+                >
+                  <FaWhatsapp size={14} /> WhatsApp
+                </a>
+                <a
+                  href="tel:5649246308"
+                  className="flex-1 py-3 px-4 bg-primary hover:bg-accent text-white font-bold text-xs uppercase tracking-wider rounded-xl transition-colors flex items-center justify-center gap-2"
+                >
+                  <FaPhone size={12} /> Llamar
+                </a>
+              </div>
+            </div>
+
+            {/* Urgencias */}
+            <div className="bg-red-950/40 text-white rounded-3xl p-8 border border-red-500/30 shadow-2xl flex flex-col items-center justify-between hover:scale-[1.02] transition-all duration-300">
+              <div className="flex flex-col items-center">
+                <div className="w-12 h-12 rounded-full bg-red-500/10 flex items-center justify-center mb-4">
+                  <FaPhone className="text-red-500 text-xl animate-pulse" />
+                </div>
+                <h3 className="text-xs font-black uppercase tracking-wider text-red-450 mb-1 text-red-400">Atención de Urgencias</h3>
+                <p className="text-2xl font-black text-red-500 tracking-wide mb-6">961 693 9460</p>
+              </div>
+              <a
+                href="tel:9616939460"
+                className="w-full py-3 px-6 bg-red-650 hover:bg-red-700 bg-red-600 text-white font-bold text-xs uppercase tracking-wider rounded-xl transition-colors flex items-center justify-center gap-2 mt-auto"
+              >
+                <FaPhone size={12} /> Llamar Urgencias
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 9. GALLERY SECTION (Static Grid) */}
       <section id="galeria" className="py-20 bg-white border-t border-slate-200">
         <div className="container mx-auto px-6 max-w-7xl text-center">
           <span className="text-xs font-bold text-stone-500 uppercase tracking-widest mb-3 block">
