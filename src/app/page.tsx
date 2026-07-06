@@ -1,10 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { doctor, offices, doctorPhotos } from "@/data/doctor";
+import { doctor, offices } from "@/data/doctor";
 import { services } from "@/data/services";
 import { symptoms } from "@/data/symptoms";
 import { diseases } from "@/data/diseases";
+import { testimonials } from "@/data/testimonials";
 import {
   FaCalendarCheck,
   FaWhatsapp,
@@ -17,6 +18,7 @@ import {
   FaMoneyBillWave,
   FaExchangeAlt,
   FaArrowRight,
+  FaArrowLeft,
   FaStar,
   FaUserCheck
 } from "react-icons/fa";
@@ -25,24 +27,10 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default function Home() {
-  const [activePhotoIndex, setActivePhotoIndex] = useState<number | null>(null);
   const [expandedBio, setExpandedBio] = useState(false);
+  const [activeTestimonial, setActiveTestimonial] = useState(0);
 
   const whatsappUrl = `https://wa.me/${doctor.whatsapp.replace(/\D/g, "")}`;
-
-  const handlePrevPhoto = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    if (activePhotoIndex !== null) {
-      setActivePhotoIndex((prev) => (prev === 0 ? doctorPhotos.length - 1 : prev! - 1));
-    }
-  };
-
-  const handleNextPhoto = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    if (activePhotoIndex !== null) {
-      setActivePhotoIndex((prev) => (prev === doctorPhotos.length - 1 ? 0 : prev! + 1));
-    }
-  };
 
   const homeSchema = {
     "@context": "https://schema.org",
@@ -74,16 +62,12 @@ export default function Home() {
             <div className="hidden lg:flex lg:col-span-6 h-full items-end justify-start relative select-none pointer-events-none">
               <div className="relative w-full h-[600px] xl:h-[750px] flex items-end justify-start">
                 <Image
-                  src="/images/DSC02541 (2).png"
+                  src="/hero.jpg"
                   alt={`Dr. Daniel Guerra de Coss`}
                   fill
                   sizes="600px"
                   priority
-                  className="object-contain object-bottom object-left"
-                  style={{
-                    maskImage: 'linear-gradient(to right, transparent, black 15%)',
-                    WebkitMaskImage: 'linear-gradient(to right, transparent, black 15%)'
-                  }}
+                  className="object-cover object-center"
                 />
               </div>
             </div>
@@ -99,15 +83,18 @@ export default function Home() {
               <h2 className="text-lg sm:text-xl font-bold text-stone-650 mb-4 uppercase tracking-wide">
                 Recupera tu peso, tu salud y tu calidad de vida
               </h2>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full">
+              <div className="flex flex-col gap-4 justify-center items-center w-full">
                 <a
                   href={whatsappUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="px-10 py-4 bg-accent hover:bg-primary text-white font-bold text-xs uppercase tracking-widest transition-all duration-300 flex items-center justify-center gap-3 shadow-md w-full sm:w-auto"
+                  className="px-10 py-4 bg-accent hover:bg-primary text-white font-bold text-xs uppercase tracking-widest transition-all duration-300 flex items-center justify-center gap-3 shadow-md w-full sm:w-auto animate-bounce-subtle"
                 >
                   <FaCalendarCheck size={14} /> Agendar Cita
                 </a>
+                <p className="text-xs text-stone-500 font-medium max-w-sm mt-1 leading-relaxed">
+                  Utiliza tu seguro de gastos médicos para tu cirugía bariátrica o gastrointestinal.
+                </p>
               </div>
             </div>
           </div>
@@ -232,7 +219,7 @@ export default function Home() {
             <div className="lg:col-span-5 flex flex-col items-center gap-6">
               <div className="relative w-full max-w-[360px] aspect-[4/5] bg-slate-200 border border-slate-300 shadow-md rounded-2xl overflow-hidden">
                 <Image
-                  src="/doctor-aboutme.jpg"
+                  src="/aboutme.jpg"
                   alt={`Dr. Daniel Guerra de Coss`}
                   fill
                   sizes="(max-width: 1024px) 100vw, 360px"
@@ -484,49 +471,165 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 6. TESTIMONIALS SECTION */}
-      <section id="testimonios" className="py-20 bg-white">
-        <div className="container mx-auto px-6 max-w-5xl text-center">
-          <span className="text-xs font-bold text-accent uppercase tracking-widest mb-3 block">
-            TU OPINIÓN ES
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-primary font-serif mb-12 uppercase">
-            MUY IMPORTANTE
-          </h2>
+      {/* 6. TESTIMONIALS & SUCCESS CASES SECTION */}
+      <section id="testimonios" className="py-20 bg-white overflow-hidden border-t border-slate-200">
+        <div className="container mx-auto px-6 max-w-7xl">
+          <div className="text-center mb-16">
+            <span className="text-xs font-bold text-accent uppercase tracking-widest mb-3 block">
+              Casos de Éxito y Reseñas
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-primary font-serif uppercase">
+              Testimonios de Pacientes Reales
+            </h2>
+            <p className="text-stone-500 text-sm mt-3 max-w-2xl mx-auto font-light">
+              Opiniones recopiladas de nuestro perfil verificado en Google Maps. Resultados reales de pacientes que han transformado su peso, salud y calidad de vida.
+            </p>
+          </div>
 
-          {/* Testimonial Box */}
-          <div className="bg-slate-50 border border-slate-200 p-8 md:p-12 text-left max-w-3xl mx-auto shadow-sm relative">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-12 rounded-full bg-accent text-white flex items-center justify-center text-lg font-bold">
-                O
-              </div>
-              <div>
-                <h3 className="font-bold text-primary text-base">Octavio M.</h3>
-                <div className="flex items-center gap-2 mt-1">
-                  <span className="flex text-yellow-500 gap-0.5">
-                    <FaStar />
-                    <FaStar />
-                    <FaStar />
-                    <FaStar />
-                    <FaStar />
-                  </span>
-                  <span className="text-[10px] text-stone-500 font-bold uppercase flex items-center gap-1">
-                    <FaUserCheck className="text-green-600" /> Paciente Verificado
-                  </span>
+          {/* Testimonial Panel */}
+          <div className="relative max-w-6xl mx-auto">
+            {/* Main Testimonial Card */}
+            <div className="bg-slate-50 border border-slate-200 rounded-[2rem] p-8 md:p-12 shadow-md">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                {/* Left side: Review Text */}
+                <div className="lg:col-span-7 flex flex-col justify-between h-full">
+                  <div>
+                    {/* Stars and Verification status */}
+                    <div className="flex flex-wrap items-center gap-4 mb-6">
+                      <div className="flex text-yellow-500 gap-1">
+                        {Array.from({ length: testimonials[activeTestimonial].rating }).map((_, i) => (
+                          <FaStar key={i} />
+                        ))}
+                      </div>
+                      <span className="text-[10px] text-stone-500 font-bold uppercase flex items-center gap-1 bg-white px-3 py-1 rounded-full border border-slate-100 shadow-xs">
+                        <FaUserCheck className="text-green-600" /> Reseña en Google Maps
+                      </span>
+                    </div>
+
+                    {/* Testimonial Text */}
+                    <blockquote className="text-stone-700 font-light italic leading-relaxed text-base md:text-lg mb-8">
+                      &ldquo;{testimonials[activeTestimonial].text}&rdquo;
+                    </blockquote>
+                  </div>
+
+                  <div>
+                    {/* Patient Profile */}
+                    <h3 className="font-bold text-primary text-lg uppercase tracking-wide">
+                      {testimonials[activeTestimonial].name}
+                    </h3>
+                    <p className="text-accent text-xs font-bold uppercase tracking-wider mt-1">
+                      Procedimiento: {testimonials[activeTestimonial].procedure}
+                    </p>
+                    {testimonials[activeTestimonial].achievement && (
+                      <p className="text-stone-600 text-xs font-semibold mt-1">
+                        Logro: {testimonials[activeTestimonial].achievement}
+                      </p>
+                    )}
+                    <p className="text-stone-500 text-[10px] uppercase tracking-wider mt-1">
+                      {testimonials[activeTestimonial].timeframe}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Right side: Before/After Comparison Image */}
+                <div className="lg:col-span-5 flex flex-col items-center">
+                  <div className="relative w-full aspect-[4/3] bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+                    {testimonials[activeTestimonial].beforeImage && testimonials[activeTestimonial].afterImage ? (
+                      <div className="grid grid-cols-2 h-full divide-x divide-slate-100">
+                        <div className="relative h-full w-full">
+                          <Image
+                            src={testimonials[activeTestimonial].beforeImage}
+                            alt={`Antes - ${testimonials[activeTestimonial].name}`}
+                            fill
+                            sizes="(max-width: 1024px) 50vw, 200px"
+                            className="object-cover"
+                          />
+                          <div className="absolute bottom-3 left-3 bg-primary/95 backdrop-blur-xs text-white text-[9px] font-black px-2.5 py-1 rounded-md uppercase tracking-widest shadow-sm">
+                            Antes
+                          </div>
+                        </div>
+                        <div className="relative h-full w-full">
+                          <Image
+                            src={testimonials[activeTestimonial].afterImage}
+                            alt={`Después - ${testimonials[activeTestimonial].name}`}
+                            fill
+                            sizes="(max-width: 1024px) 50vw, 200px"
+                            className="object-cover"
+                          />
+                          <div className="absolute bottom-3 right-3 bg-accent/95 backdrop-blur-xs text-white text-[9px] font-black px-2.5 py-1 rounded-md uppercase tracking-widest shadow-sm">
+                            Después
+                          </div>
+                        </div>
+                      </div>
+                    ) : (
+                      <>
+                        <Image
+                          src={testimonials[activeTestimonial].image}
+                          alt={`Progreso de ${testimonials[activeTestimonial].name}`}
+                          fill
+                          sizes="(max-width: 1024px) 100vw, 400px"
+                          className="object-contain p-2"
+                        />
+                        {/* Before & After labels */}
+                        <div className="absolute bottom-3 left-3 bg-primary/90 backdrop-blur-xs text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                          Antes
+                        </div>
+                        <div className="absolute bottom-3 right-3 bg-accent/90 backdrop-blur-xs text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                          Después
+                        </div>
+                      </>
+                    )}
+                  </div>
+                  <p className="text-[10px] text-stone-500 italic mt-3 text-center">
+                    {testimonials[activeTestimonial].beforeImage && testimonials[activeTestimonial].afterImage
+                      ? "Fotografía clínica real compartida por el paciente en Google Maps."
+                      : "Representación esquemática del progreso clínico bariatríco."}
+                  </p>
                 </div>
               </div>
             </div>
-            <p className="text-stone-700 font-light italic leading-relaxed text-sm md:text-base">
-              &ldquo;Excelente especialista. Dedicación y paciencia durante la consulta, muy explicativo y aclaración de dudas. Recomiendo ampliamente al Dr. Daniel Guerra de Coss, solucionó mi problema digestivo de forma profesional.&rdquo;
-            </p>
-            <div className="mt-8 text-right">
+
+            {/* Carousel Controls */}
+            <div className="flex justify-between items-center mt-8 px-4">
+              <div className="flex gap-2">
+                <button
+                  onClick={() => setActiveTestimonial((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1))}
+                  className="w-12 h-12 rounded-full border border-slate-250 bg-white hover:bg-slate-50 text-primary flex items-center justify-center transition-all shadow-xs cursor-pointer focus:outline-none"
+                  aria-label="Anterior testimonio"
+                >
+                  <FaArrowLeft size={14} />
+                </button>
+                <button
+                  onClick={() => setActiveTestimonial((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1))}
+                  className="w-12 h-12 rounded-full border border-slate-250 bg-white hover:bg-slate-50 text-primary flex items-center justify-center transition-all shadow-xs cursor-pointer focus:outline-none"
+                  aria-label="Siguiente testimonio"
+                >
+                  <FaArrowRight size={14} />
+                </button>
+              </div>
+
+              {/* Dots indicator */}
+              <div className="flex gap-2">
+                {testimonials.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setActiveTestimonial(index)}
+                    className={`w-3 h-3 rounded-full transition-all cursor-pointer ${
+                      index === activeTestimonial ? "bg-accent w-6" : "bg-slate-250 hover:bg-slate-400"
+                    }`}
+                    aria-label={`Ir al testimonio ${index + 1}`}
+                  />
+                ))}
+              </div>
+
+              {/* Source Link */}
               <a
-                href={doctor.sameAs?.[0] || "https://www.doctoralia.com.mx"}
+                href={testimonials[activeTestimonial].sourceUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-block px-5 py-2 bg-primary hover:bg-accent text-white font-bold text-xs uppercase tracking-widest transition-all duration-300"
+                className="hidden sm:inline-flex items-center gap-2 text-xs font-bold text-accent hover:text-primary transition-colors uppercase tracking-widest"
               >
-                VER MÁS EN DOCTORALIA
+                Ver reseña original <FaArrowRight size={10} />
               </a>
             </div>
           </div>
@@ -678,85 +781,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 9. GALLERY SECTION (Static Grid) */}
-      <section id="galeria" className="py-20 bg-white border-t border-slate-200">
-        <div className="container mx-auto px-6 max-w-7xl text-center">
-          <span className="text-xs font-bold text-stone-500 uppercase tracking-widest mb-3 block">
-            Galería de Fotos
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-primary font-serif mb-12 uppercase">
-            NUESTRAS INSTALACIONES
-          </h2>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            {doctorPhotos.map((photo, index) => (
-              <div
-                key={index}
-                className="aspect-[4/3] relative cursor-pointer overflow-hidden border border-slate-200 bg-slate-100"
-                onClick={() => setActivePhotoIndex(index)}
-              >
-                <Image
-                  src={photo}
-                  alt={`Instalaciones Dr. Daniel Guerra - Foto ${index + 1}`}
-                  fill
-                  sizes="(max-width: 640px) 100vw, 250px"
-                  className="object-cover"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* LIGHTBOX MODAL */}
-      {activePhotoIndex !== null && (
-        <div
-          className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center select-none"
-          onClick={() => setActivePhotoIndex(null)}
-        >
-          {/* Close button */}
-          <button
-            className="absolute top-6 right-6 text-white bg-white/10 hover:bg-white/20 w-12 h-12 flex items-center justify-center rounded-full text-2xl font-bold"
-            onClick={() => setActivePhotoIndex(null)}
-          >
-            &times;
-          </button>
-
-          {/* Prev button */}
-          <button
-            className="absolute left-6 text-white bg-white/10 hover:bg-white/20 w-14 h-14 flex items-center justify-center rounded-full text-3xl"
-            onClick={handlePrevPhoto}
-          >
-            &#8249;
-          </button>
-
-          {/* Image Container */}
-          <div
-            className="relative max-w-[90vw] max-h-[80vh] flex items-center justify-center"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <Image
-              src={doctorPhotos[activePhotoIndex]}
-              alt="Instalaciones - Ampliada"
-              width={1200}
-              height={900}
-              priority
-              className="max-w-full max-h-[80vh] w-auto h-auto object-contain shadow-2xl"
-            />
-            <div className="absolute bottom-[-40px] text-center text-white/60 text-xs font-bold uppercase tracking-widest">
-              Foto {activePhotoIndex + 1} de {doctorPhotos.length}
-            </div>
-          </div>
-
-          {/* Next button */}
-          <button
-            className="absolute right-6 text-white bg-white/10 hover:bg-white/20 w-14 h-14 flex items-center justify-center rounded-full text-3xl"
-            onClick={handleNextPhoto}
-          >
-            &#8250;
-          </button>
-        </div>
-      )}
     </div>
   );
 }
