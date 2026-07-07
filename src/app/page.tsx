@@ -62,7 +62,7 @@ export default function Home() {
             <div className="hidden lg:flex lg:col-span-6 h-full items-end justify-start relative select-none pointer-events-none">
               <div className="relative w-full h-[600px] xl:h-[750px] flex items-end justify-start">
                 <Image
-                  src="/hero.jpg"
+                  src="/hero1.png"
                   alt={`Dr. Daniel Guerra de Coss`}
                   fill
                   sizes="600px"
@@ -73,28 +73,35 @@ export default function Home() {
             </div>
 
             {/* Right Column: Centered Text Content */}
-            <div className="lg:col-span-6 bg-white/95 backdrop-blur-md p-8 lg:p-12 border border-slate-200/60 shadow-xl rounded-3xl flex flex-col items-center text-center self-center lg:mb-20">
-              <span className="text-sm font-bold text-accent uppercase tracking-wider mb-2">
-                Tu salud en manos del especialista
-              </span>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary mb-4 font-serif leading-tight uppercase">
-                {doctor.title} {doctor.name}
-              </h1>
-              <h2 className="text-lg sm:text-xl font-bold text-stone-650 mb-4 uppercase tracking-wide">
-                Recupera tu peso, tu salud y tu calidad de vida
-              </h2>
-              <div className="flex flex-col gap-4 justify-center items-center w-full">
-                <a
-                  href={whatsappUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="px-10 py-4 bg-accent hover:bg-primary text-white font-bold text-xs uppercase tracking-widest transition-all duration-300 flex items-center justify-center gap-3 shadow-md w-full sm:w-auto animate-bounce-subtle"
-                >
-                  <FaCalendarCheck size={14} /> Agendar Cita
-                </a>
-                <p className="text-xs text-stone-500 font-medium max-w-sm mt-1 leading-relaxed">
-                  Utiliza tu seguro de gastos médicos para tu cirugía bariátrica o gastrointestinal.
-                </p>
+            <div className="lg:col-span-6 flex flex-col items-center self-center lg:mb-20 gap-4 w-full">
+              <div className="bg-white/95 backdrop-blur-md p-8 lg:p-12 border border-slate-200/60 shadow-xl rounded-3xl flex flex-col items-center text-center w-full">
+                <span className="text-sm font-bold text-accent uppercase tracking-wider mb-2">
+                  Tu salud en manos del especialista
+                </span>
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary mb-4 font-serif leading-tight uppercase">
+                  {doctor.title} {doctor.name}
+                </h1>
+                <h2 className="text-lg sm:text-xl font-bold text-stone-650 mb-4 uppercase tracking-wide">
+                  Recupera tu peso, tu salud y tu calidad de vida
+                </h2>
+                <div className="flex flex-col gap-4 justify-center items-center w-full">
+                  <a
+                    href={whatsappUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="px-10 py-4 bg-accent hover:bg-primary text-white font-bold text-xs uppercase tracking-widest transition-all duration-300 flex items-center justify-center gap-3 shadow-md w-full sm:w-auto animate-bounce-subtle"
+                  >
+                    <FaCalendarCheck size={14} /> Agendar Cita
+                  </a>
+                </div>
+              </div>
+
+              {/* Recuadro de seguros abajo de la card */}
+              <div className="bg-white/90 backdrop-blur-sm p-4 border border-slate-200/60 shadow-md rounded-2xl text-center text-xs font-medium text-stone-650 max-w-xl w-full flex items-center justify-center gap-3">
+                <FaShieldAlt className="text-accent text-lg flex-shrink-0 animate-pulse" />
+                <span className="text-left leading-relaxed">
+                  Aceptamos y apoyamos con el trámite de seguro de gastos médicos mayores para tu mayor comodidad, consúltanos para brindarte la asesoría adecuada.
+                </span>
               </div>
             </div>
           </div>
@@ -682,8 +689,11 @@ export default function Home() {
                 <h2 className="text-2xl font-bold font-serif mb-6 uppercase">
                   SEGUROS MÉDICOS
                 </h2>
+                <p className="text-white text-base font-semibold leading-snug mb-3">
+                  Tu cirugía Bariátrica o Gastrointestinal usando tu seguro de gastos médicos mayores
+                </p>
                 <p className="text-slate-300 text-xs font-light leading-relaxed mb-6">
-                  Aceptamos and apoyamos con el trámite de reembolso y programaciones con aseguradoras de gastos médicos mayores. Consúltanos para brindarte la asesoría adecuada.
+                  Aceptamos y apoyamos con el trámite de seguro de gastos médicos mayores para tu mayor comodidad, consúltanos para brindarte la asesoría adecuada.
                 </p>
               </div>
               <a
