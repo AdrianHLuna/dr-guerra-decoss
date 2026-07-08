@@ -52,22 +52,22 @@ export default function Home() {
     <div className="min-h-screen bg-white font-sans text-stone-800 selection:bg-accent/30">
       <StructuredData data={homeSchema} />
 
-      <section className="relative min-h-[calc(100vh-120px)] lg:h-[calc(100vh-120px)] flex flex-col justify-between bg-slate-50 border-b border-slate-200 pt-16 pb-0 bg-[url('/blurred-office-bg.png')] bg-cover bg-center bg-no-repeat">
+      <section className="relative min-h-[calc(100vh-120px)] lg:min-h-[calc(100vh-120px)] flex flex-col justify-between bg-slate-50 border-b border-slate-200 pt-16 pb-0 bg-[url('/blurred-office-bg.png')] bg-cover bg-center bg-no-repeat">
         {/* Soft overlay on all viewports to make text highly readable */}
         <div className="absolute inset-0 z-0" />
-        
+
         <div className="container mx-auto px-6 max-w-7xl relative z-10 flex-grow flex items-end">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end w-full">
             {/* Left Column: Doctor's PNG on desktop */}
-            <div className="hidden lg:flex lg:col-span-6 h-full items-end justify-start relative select-none pointer-events-none">
+            <div className="hidden lg:flex lg:col-span-6 min-h-[600px] xl:min-h-[750px] items-end justify-start relative select-none pointer-events-none self-end">
               <div className="relative w-full h-[600px] xl:h-[750px] flex items-end justify-start">
                 <Image
-                  src="/hero1.png"
+                  src="/hero2.png"
                   alt={`Dr. Daniel Guerra de Coss`}
                   fill
                   sizes="600px"
                   priority
-                  className="object-cover object-center"
+                  className="object-contain object-center"
                 />
               </div>
             </div>
@@ -78,7 +78,7 @@ export default function Home() {
                 <span className="text-sm font-bold text-accent uppercase tracking-wider mb-2">
                   Tu salud en manos del especialista
                 </span>
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary mb-4 font-serif leading-tight uppercase">
+                <h1 className="text-4xl sm:text-5xl lg:text-4xl font-bold text-primary mb-4 font-serif leading-tight uppercase">
                   {doctor.title} {doctor.name}
                 </h1>
                 <h2 className="text-lg sm:text-xl font-bold text-stone-650 mb-4 uppercase tracking-wide">
@@ -97,11 +97,24 @@ export default function Home() {
               </div>
 
               {/* Recuadro de seguros abajo de la card */}
-              <div className="bg-white/90 backdrop-blur-sm p-4 border border-slate-200/60 shadow-md rounded-2xl text-center text-xs font-medium text-stone-650 max-w-xl w-full flex items-center justify-center gap-3">
-                <FaShieldAlt className="text-accent text-lg flex-shrink-0 animate-pulse" />
-                <span className="text-left leading-relaxed">
-                  Aceptamos y apoyamos con el trámite de seguro de gastos médicos mayores para tu mayor comodidad, consúltanos para brindarte la asesoría adecuada.
-                </span>
+              <div className="bg-gradient-to-br from-primary via-slate-900 to-primary text-white p-7 md:p-8 border border-white/10 shadow-2xl rounded-3xl max-w-xl w-full relative overflow-hidden group">
+                {/* Decorative glowing background */}
+                <div className="absolute -right-16 -top-16 w-36 h-36 bg-accent/25 rounded-full blur-2xl group-hover:bg-accent/35 transition-all duration-500" />
+
+                <div className="flex flex-col sm:flex-row items-center sm:items-start gap-5 relative z-10">
+                  <div className="bg-accent/25 p-4 rounded-2xl text-white border border-accent/40 flex-shrink-0 animate-pulse">
+                    <FaShieldAlt className="text-3xl text-accent-foreground" />
+                  </div>
+                  <div className="text-center sm:text-left flex-grow">
+
+                    <h4 className="text-lg sm:text-xl font-bold text-white uppercase tracking-wide mb-2 font-serif">
+                      Tu cirugía Bariátrica o Gastrointestinal usando tu seguro de gastos médicos mayores
+                    </h4>
+                    <p className="text-slate-300 text-xs sm:text-sm font-light leading-relaxed mb-5">
+                      Aceptamos y apoyamos con el trámite de seguro de gastos médicos mayores para tu mayor comodidad, consúltanos para brindarte la asesoría adecuada.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -173,7 +186,7 @@ export default function Home() {
                 <p>
                   Por lo que para alcanzar mi sueño me mudé a la Ciudad de México en donde cursé la especialidad de: <strong>&ldquo;Cirugía General&rdquo;</strong> en el hospital más grande de México y Latinoamérica, el &ldquo;Hospital General de México Dr. Eduardo Liceaga&rdquo;, el cual es avalado por la UNAM. En este hospital atendemos pacientes con hernias de pared abdominal, problemas intestinales o traumatismos de urgencia, y fue en esta especialidad que decidí enfocarme en tratar las alteraciones del tracto digestivo y resolverlas por mínima invasión.
                 </p>
-                
+
                 {expandedBio && (
                   <div className="space-y-4 pt-4 border-t border-slate-100">
                     <p>
@@ -226,7 +239,7 @@ export default function Home() {
             <div className="lg:col-span-5 flex flex-col items-center gap-6">
               <div className="relative w-full max-w-[360px] aspect-[4/5] bg-slate-200 border border-slate-300 shadow-md rounded-2xl overflow-hidden">
                 <Image
-                  src="/aboutme.jpg"
+                  src="/aboutme1.jpg"
                   alt={`Dr. Daniel Guerra de Coss`}
                   fill
                   sizes="(max-width: 1024px) 100vw, 360px"
@@ -621,9 +634,8 @@ export default function Home() {
                   <button
                     key={index}
                     onClick={() => setActiveTestimonial(index)}
-                    className={`w-3 h-3 rounded-full transition-all cursor-pointer ${
-                      index === activeTestimonial ? "bg-accent w-6" : "bg-slate-250 hover:bg-slate-400"
-                    }`}
+                    className={`w-3 h-3 rounded-full transition-all cursor-pointer ${index === activeTestimonial ? "bg-accent w-6" : "bg-slate-250 hover:bg-slate-400"
+                      }`}
                     aria-label={`Ir al testimonio ${index + 1}`}
                   />
                 ))}
