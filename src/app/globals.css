@@ -17,6 +17,16 @@
   --font-serif: 'Cormorant Garamond', serif;
 }
 
+html {
+  font-size: 106.25%; /* 17px base on mobile for better aspect ratio */
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 112.5%; /* 18px base on tablet and desktop */
+  }
+}
+
 :root {
   --background: #fcfcfc;
   --foreground: #1c1917;

@@ -127,11 +127,11 @@ export default function Home() {
             <div className="flex items-start gap-4 p-4">
               <FaMapMarkerAlt className="text-accent text-3xl flex-shrink-0 mt-1" />
               <div>
-                <h3 className="font-bold text-primary uppercase text-xs tracking-wider mb-2">Dirección</h3>
-                <p className="text-stone-600 text-xs font-light leading-relaxed">
+                <h3 className="font-bold text-primary uppercase text-sm tracking-wider mb-2">Dirección</h3>
+                <p className="text-stone-700 text-sm font-normal leading-relaxed">
                   <strong>CDMX:</strong> Tuxpan 16, Consultorio 703, Torre Médica Tuxpan, Col. Roma Sur.
                 </p>
-                <p className="text-stone-600 text-xs font-light leading-relaxed mt-1">
+                <p className="text-stone-700 text-sm font-normal leading-relaxed mt-1.5">
                   <strong>Chiapas:</strong> 21a Poniente Sur 103, Penipak, Tuxtla Gutiérrez.
                 </p>
               </div>
@@ -141,14 +141,14 @@ export default function Home() {
             <div className="flex items-start gap-4 p-4 border-y md:border-y-0 md:border-x border-slate-100">
               <FaPhone className="text-accent text-3xl flex-shrink-0 mt-1" />
               <div>
-                <h3 className="font-bold text-primary uppercase text-xs tracking-wider mb-2">Teléfonos</h3>
-                <p className="text-stone-600 text-xs font-light leading-relaxed">
+                <h3 className="font-bold text-primary uppercase text-sm tracking-wider mb-2">Teléfonos</h3>
+                <p className="text-stone-700 text-sm font-normal leading-relaxed">
                   <strong>Citas y Urgencias:</strong>
                 </p>
-                <p className="text-primary font-bold text-sm tracking-wider mt-1">
+                <p className="text-primary font-bold text-base tracking-wider mt-1.5">
                   {doctor.phone.replace(/(\d{2})(\d{4})(\d{4})/, "$1 $2 $3")}
                 </p>
-                <p className="text-stone-500 text-[10px] mt-1">Disponible para atención y urgencias médicas.</p>
+                <p className="text-stone-500 text-xs mt-1.5">Disponible para atención y urgencias médicas.</p>
               </div>
             </div>
 
@@ -156,8 +156,8 @@ export default function Home() {
             <div className="flex items-start gap-4 p-4">
               <FaClock className="text-accent text-3xl flex-shrink-0 mt-1" />
               <div>
-                <h3 className="font-bold text-primary uppercase text-xs tracking-wider mb-2">Citas</h3>
-                <p className="text-stone-650 text-xs font-semibold leading-relaxed">
+                <h3 className="font-bold text-primary uppercase text-sm tracking-wider mb-2">Citas</h3>
+                <p className="text-stone-700 text-sm font-semibold leading-relaxed">
                   Toda consulta es previa cita. Favor de consultar disponibilidad.
                 </p>
               </div>
@@ -521,31 +521,31 @@ export default function Home() {
                           <FaStar key={i} />
                         ))}
                       </div>
-                      <span className="text-[10px] text-stone-500 font-bold uppercase flex items-center gap-1 bg-white px-3 py-1 rounded-full border border-slate-100 shadow-xs">
+                      <span className="text-xs text-stone-600 font-bold uppercase flex items-center gap-1 bg-white px-3.5 py-1.5 rounded-full border border-slate-100 shadow-xs">
                         <FaUserCheck className="text-green-600" /> Reseña en Google Maps
                       </span>
                     </div>
 
                     {/* Testimonial Text */}
-                    <blockquote className="text-stone-700 font-light italic leading-relaxed text-base md:text-lg mb-8">
+                    <blockquote className="text-stone-900 font-normal italic leading-relaxed text-lg md:text-xl mb-8">
                       &ldquo;{testimonials[activeTestimonial].text}&rdquo;
                     </blockquote>
                   </div>
 
                   <div>
                     {/* Patient Profile */}
-                    <h3 className="font-bold text-primary text-lg uppercase tracking-wide">
+                    <h3 className="font-bold text-primary text-xl uppercase tracking-wide">
                       {testimonials[activeTestimonial].name}
                     </h3>
-                    <p className="text-accent text-xs font-bold uppercase tracking-wider mt-1">
+                    <p className="text-accent text-sm font-bold uppercase tracking-wider mt-1">
                       Procedimiento: {testimonials[activeTestimonial].procedure}
                     </p>
                     {testimonials[activeTestimonial].achievement && (
-                      <p className="text-stone-600 text-xs font-semibold mt-1">
+                      <p className="text-stone-700 text-sm font-semibold mt-1">
                         Logro: {testimonials[activeTestimonial].achievement}
                       </p>
                     )}
-                    <p className="text-stone-500 text-[10px] uppercase tracking-wider mt-1">
+                    <p className="text-stone-500 text-xs uppercase tracking-wider mt-1.5 font-medium">
                       {testimonials[activeTestimonial].timeframe}
                     </p>
                   </div>
@@ -564,7 +564,7 @@ export default function Home() {
                             sizes="(max-width: 1024px) 50vw, 200px"
                             className="object-cover"
                           />
-                          <div className="absolute bottom-3 left-3 bg-primary/95 backdrop-blur-xs text-white text-[9px] font-black px-2.5 py-1 rounded-md uppercase tracking-widest shadow-sm">
+                          <div className="absolute bottom-3 left-3 bg-primary/95 backdrop-blur-xs text-white text-xs font-bold px-3 py-1.5 rounded-md uppercase tracking-widest shadow-sm">
                             Antes
                           </div>
                         </div>
@@ -576,7 +576,7 @@ export default function Home() {
                             sizes="(max-width: 1024px) 50vw, 200px"
                             className="object-cover"
                           />
-                          <div className="absolute bottom-3 right-3 bg-accent/95 backdrop-blur-xs text-white text-[9px] font-black px-2.5 py-1 rounded-md uppercase tracking-widest shadow-sm">
+                          <div className="absolute bottom-3 right-3 bg-accent/95 backdrop-blur-xs text-white text-xs font-bold px-3 py-1.5 rounded-md uppercase tracking-widest shadow-sm">
                             Después
                           </div>
                         </div>
@@ -591,16 +591,16 @@ export default function Home() {
                           className="object-contain p-2"
                         />
                         {/* Before & After labels */}
-                        <div className="absolute bottom-3 left-3 bg-primary/90 backdrop-blur-xs text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                        <div className="absolute bottom-3 left-3 bg-primary/90 backdrop-blur-xs text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
                           Antes
                         </div>
-                        <div className="absolute bottom-3 right-3 bg-accent/90 backdrop-blur-xs text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                        <div className="absolute bottom-3 right-3 bg-accent/90 backdrop-blur-xs text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
                           Después
                         </div>
                       </>
                     )}
                   </div>
-                  <p className="text-[10px] text-stone-500 italic mt-3 text-center">
+                  <p className="text-xs text-stone-600 italic mt-3 text-center">
                     {testimonials[activeTestimonial].beforeImage && testimonials[activeTestimonial].afterImage
                       ? "Fotografía clínica real compartida por el paciente en Google Maps."
                       : "Representación esquemática del progreso clínico bariatríco."}
