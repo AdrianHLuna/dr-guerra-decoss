@@ -8,7 +8,7 @@ export const doctor: DoctorProfile = {
   subspecialty: "Cirugía Digestiva y Cirugía Bariátrica y Metabólica",
   cedula: "11938343", // Médico Cirujano - UAG
   cedulaEspecialidad: "14368935", // Especialidad en Cirugía Laparoscópica Avanzada - UNAM
-  cofepris: undefined, // Omitido según instrucciones del usuario (sin COFEPRIS ficticio)
+  cofepris: "2409152002A00253",
   phone: "5649246308",
   whatsapp: "5649246308",
   email: "contacto@drgerradecoss.com",
@@ -58,6 +58,10 @@ export const doctor: DoctorProfile = {
     {
       name: "Cédula de Alta Especialidad en Cirugía Digestiva",
       institution: "Cédula Reg. C24014424",
+    },
+    {
+      name: "Permiso de Publicidad COFEPRIS",
+      institution: "Folio 2409152002A00253",
     }
   ],
   education: [

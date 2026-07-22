@@ -27,6 +27,14 @@ export default function Header() {
             <span>
               Alta Esp: <strong className="font-medium text-white">C24014424</strong> <span className="text-accent font-semibold text-[9px] uppercase tracking-wider">(UNAM)</span>
             </span>
+            {doctor.cofepris && (
+              <>
+                <span className="text-slate-600">|</span>
+                <span>
+                  COFEPRIS: <strong className="font-medium text-white">{doctor.cofepris}</strong>
+                </span>
+              </>
+            )}
           </div>
           <div className="flex items-center gap-4">
             <a href={`tel:${doctor.phone}`} className="flex items-center gap-2 text-slate-300 hover:text-white transition-all font-medium">

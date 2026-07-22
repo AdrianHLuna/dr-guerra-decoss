@@ -25,6 +25,11 @@ export const metadata: Metadata = {
     locale: "es_MX",
     type: "website",
   },
+  icons: {
+    icon: "/images/Logo_Daniel Guerra PNG BLANCO.png",
+    shortcut: "/images/Logo_Daniel Guerra PNG BLANCO.png",
+    apple: "/images/Logo_Daniel Guerra PNG BLANCO.png",
+  },
 };
 
 export default function RootLayout({

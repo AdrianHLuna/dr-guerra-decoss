@@ -126,6 +126,9 @@ export default function Footer() {
             CÉDULA PROFESIONAL: <strong className="font-medium text-white">{doctor.cedula}</strong> (UAG) &nbsp;|&nbsp; 
             CÉDULA ESPECIALIDAD: <strong className="font-medium text-white">{doctor.cedulaEspecialidad}</strong> (UNAM) &nbsp;|&nbsp; 
             ALTA ESPECIALIDAD: <strong className="font-medium text-white">C24014424</strong> (UNAM)
+            {doctor.cofepris && (
+              <> &nbsp;|&nbsp; COFEPRIS: <strong className="font-medium text-white">{doctor.cofepris}</strong></>
+            )}
           </p>
           <p className="text-stone-500 text-[9px] tracking-wider uppercase mt-1">
             © {new Date().getFullYear()} DR. DANIEL GUERRA DE COSS. TODOS LOS DERECHOS RESERVADOS. &nbsp;|&nbsp; 
